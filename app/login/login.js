@@ -1,0 +1,24 @@
+const LoginViewModel = require("./login-view-model");
+var view = require("ui/core/view");
+const appSettings = require("application-settings");
+
+async function onNavigatingTo(args) {
+    const component = args.object;
+    component.bindingContext = new LoginViewModel();
+
+    const logged = await appSettings.getBoolean("logged");
+    if(logged){
+        const page = component.page;
+        const myFrame = page.frame;
+        myFrame.navigate("tab-view");
+    }
+
+}
+
+
+// exports.submit = args => {
+    
+// }
+
+
+exports.onNavigatingTo = onNavigatingTo;

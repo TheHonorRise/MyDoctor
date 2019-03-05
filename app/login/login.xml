@@ -1,0 +1,29 @@
+<Page loaded="onNavigatingTo" class="page" actionBarHidden="true" xmlns="http://www.nativescript.org/tns.xsd">
+	<FlexboxLayout class="page">
+		<StackLayout class="form">
+			<Image class="logo" src="~/images/logo.png" alt="hamid" />
+			<Label class="header" text="APP NAME" />
+
+			<StackLayout class="input-field">
+				<TextField id="hamid" class="input" text="{{ email }}" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none"
+				 returnKeyType="next" />
+				<Label class="hr-light" />
+			</StackLayout>
+
+			<StackLayout class="input-field">
+				<TextField id="password" text="{{ password }}" class="input" hint="Password" secure="true" />
+			</StackLayout>
+
+			<Button text="Log In" tap="{{ submit }}" class="btn btn-primary m-t-20" />
+			<Label text="Forgot your password?" class="login-label" tap=" forgotPassword "/>
+			<Label text="{{ error }}" class="login-label"/>
+		</StackLayout>
+
+		<Label class="login-label sign-up-label" tap="{{}}">
+			<FormattedString>
+				<Span text="Don’t have an account?  " />
+				<Span text="Sign up" class="bold" />
+			</FormattedString>
+		</Label>
+	</FlexboxLayout>
+</Page>
