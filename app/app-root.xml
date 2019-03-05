@@ -4,7 +4,7 @@ tapping on some of the tabs or by swiping between the views.
 Learn more about the TabView component in this documentation article:
 http://docs.nativescript.org/cookbook/ui/tab-view
 -->
-<TabView androidTabsPosition="bottom">
+<TabView androidTabsPosition="top">
     <TabViewItem title="Home" ios:iconSource="res://tabIcons/home" android:iconSource="res://home">
         <Frame defaultPage="home/home-items-page"></Frame>
     </TabViewItem>
@@ -17,7 +17,7 @@ http://docs.nativescript.org/cookbook/ui/tab-view
         <Frame defaultPage="search/search-page"></Frame>
     </TabViewItem>
 
-    <TabViewItem title="Settings" ios:iconSource="res://tabIcons/settings" android:iconSource="res://settings">
+    <TabViewItem title="Settings" ios:iconSource="res://tabIcons/settings" android:iconSource="res://search">
         <Frame defaultPage="settings/settings-page"></Frame>
     </TabViewItem>
 </TabView>
