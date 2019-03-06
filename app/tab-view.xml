@@ -1,0 +1,19 @@
+<Page loaded="onLoaded" actionBarHidden="true">
+    <TabView androidTabsPosition="bottom">
+        <TabViewItem title="Home" ios:iconSource="res://tabIcons/home" android:iconSource="res://home">
+            <Frame defaultPage="home/home-items-page"></Frame>
+        </TabViewItem>
+
+        <TabViewItem title="Browse" ios:iconSource="res://tabIcons/browse" android:iconSource="res://browse">
+            <Frame defaultPage="browse/browse-page"></Frame>
+        </TabViewItem>
+
+        <TabViewItem title="Search" ios:iconSource="res://tabIcons/search" android:iconSource="res://search">
+            <Frame defaultPage="search/search-page"></Frame>
+        </TabViewItem>
+
+        <TabViewItem title="Settings" ios:iconSource="res://tabIcons/settings" android:iconSource="res://settings">
+            <Frame defaultPage="settings/settings-page"></Frame>
+        </TabViewItem>
+    </TabView>
+</Page>
