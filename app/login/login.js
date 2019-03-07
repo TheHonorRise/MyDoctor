@@ -1,7 +1,7 @@
 const LoginViewModel = require("./login-view-model");
 const appSettings = require("application-settings");
 
-exports.onNavigatingTo = (args) => {
+function onNavigatingTo(args) {
     const component = args.object;
     component.bindingContext = new LoginViewModel();
 

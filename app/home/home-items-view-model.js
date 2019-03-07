@@ -1,58 +1,22 @@
 const observableModule = require("tns-core-modules/data/observable");
-
+const appSettings = require("tns-core-modules/application-settings");
 function HomeItemsViewModel() {
     const viewModel = observableModule.fromObject({
-        items: [
-            {
-                name: "Item 1",
-                description: "Description for Item 1"
-            },
-            {
-                name: "Item 2",
-                description: "Description for Item 2"
-            },
-            {
-                name: "Item 3",
-                description: "Description for Item 3"
-            },
-            {
-                name: "Item 4",
-                description: "Description for Item 4"
-            },
-            {
-                name: "Item 5",
-                description: "Description for Item 5"
-            },
-            {
-                name: "Item 6",
-                description: "Description for Item 6"
-            },
-            {
-                name: "Item 7",
-                description: "Description for Item 7"
-            },
-            {
-                name: "Item 8",
-                description: "Description for Item 8"
-            },
-            {
-                name: "Item 9",
-                description: "Description for Item 9"
-            },
-            {
-                name: "Item 10",
-                description: "Description for Item 10"
-            },
-            {
-                name: "Item 11",
-                description: "Description for Item 11"
-            },
-            {
-                name: "Item 12",
-                description: "Description for Item 12"
-            }
-        ]
+        items: []
     });
+    const id = appSettings.getString("_id");
+    fetch("http://192.168.43.240:8080/patients/5c6d6f13d13eea03a474819a", {
+        method: "GET",
+        headers: { "content-type": "application/json" }
+    })
+        .then((r) => r.json())
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((e) => {
+        console.log(e);
+    });
+
 
     return viewModel;
 }
