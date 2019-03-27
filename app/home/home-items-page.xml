@@ -1,17 +1,38 @@
 <Page
     class="page"
-    navigatingTo="onNavigatingTo"  
-    xmlns="http://schemas.nativescript.org/tns.xsd">
+    navigatingTo="onNavigatingTo"
+    xmlns="http://schemas.nativescript.org/tns.xsd"
+    xmlns:lv="nativescript-ui-listview">
 
     <ActionBar class="action-bar">
-        <Label class="action-bar-title" text="Home"></Label>
+        <Label class="action-bar-title" text="My Patients"></Label>
     </ActionBar>
 
-    <ListView items="{{ items }}" itemTap="onItemTap" class="list-group">
-        <ListView.itemTemplate>
-            <StackLayout orientation="horizontal" class="list-group-item">
-                <Label text="{{ name }}" textWrap="true"></Label>
-            </StackLayout>
-        </ListView.itemTemplate>
-    </ListView>
+    <GridLayout rows="*">
+        <lv:RadListView id="list-view" row="0" items="{{ items }}" marginRight="-2" backgroundColor="#e6e6e6" itemTap="onItemTap">
+            <lv:RadListView.listViewLayout>
+                <lv:ListViewStaggeredLayout scrollDirection="Vertical" spanCount="2" />
+            </lv:RadListView.listViewLayout>
+            <lv:RadListView.itemTemplate>
+                <StackLayout margin="15" borderRadius="10">
+                    <Image src="{{ image }}" width="200" height="120" stretch="aspectFill" />
+                    <StackLayout backgroundColor="white" padding="10">
+                        <Label text="{{ firstName + '  '+ lastName }}" class="item-name" textWrap="true" />
+                        <Label text="{{ deptName }}" class="item-desc" textWrap="true" />
+                        <Label text="{{ height +' m '+ weight +' kg ' }}" class="item-price" />
+                    </StackLayout>
+                </StackLayout>
+            </lv:RadListView.itemTemplate>
+        </lv:RadListView>
+    </GridLayout>
+
+
+    <!--<ListView items="{{ items }}" itemTap="onItemTap" class="list-group">-->
+        <!--<ListView.itemTemplate>-->
+            <!--<StackLayout orientation="horizontal" class="list-group-item">-->
+                <!--<Label text="{{ firstName }}" textWrap="true"></Label>-->
+                <!--<Label text="{{ lastName }}" textWrap="true"/>-->
+            <!--</StackLayout>-->
+        <!--</ListView.itemTemplate>-->
+    <!--</ListView>-->
 </Page>

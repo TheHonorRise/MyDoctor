@@ -4,8 +4,8 @@ const appSettings = require("application-settings");
 
 function LoginViewModel() {
     const viewModel = observableModule.fromObject({
-        email: "dude@gmail.com",
-        password: "1234567",
+        email: "hamada@gmail.com",
+        password: "Half.Blood.2491",
         _id : "",
         status : 1,
         error : "",

@@ -1,8 +1,22 @@
 const HomeItemsViewModel = require("./home-items-view-model");
+const appSettings = require("tns-core-modules/application-settings");
 
 function onNavigatingTo(args) {
     const component = args.object;
     component.bindingContext = new HomeItemsViewModel();
+
+    const id = appSettings.getString("_id");
+    fetch(`http://192.168.43.240:8080/patients/${id}`, {
+        method: "GET",
+        headers: { "content-type": "application/json" }
+    })
+        .then((r) => r.json())
+        .then((response) => {
+            component.bindingContext.items = response;
+        })
+        .catch((e) => {
+            console.log(e);
+        });
 }
 
 function onItemTap(args) {

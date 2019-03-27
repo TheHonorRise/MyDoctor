@@ -11,10 +11,7 @@ function onNavigatingTo(args) {
         const myFrame = page.frame;
         myFrame.navigate("tab-view");
     }
-
 }
-
-
 // exports.submit = args => {
 
 // }

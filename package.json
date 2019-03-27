@@ -12,7 +12,8 @@
     "license": "SEE LICENSE IN <your-license-filename>",
     "repository": "<fill-your-repository-here>",
     "scripts": {
-        "lint": "eslint \"app/**/*.js\""
+        "lint": "eslint \"app/**/*.js\"",
+        "start": "tns preview"
     },
     "dependencies": {
         "nativescript-theme-core": "~1.0.4",
