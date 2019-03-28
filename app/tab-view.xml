@@ -4,7 +4,7 @@
             <Frame defaultPage="home/home-items-page"></Frame>
         </TabViewItem>
 
-        <TabViewItem title="Browse" ios:iconSource="res://tabIcons/browse" android:iconSource="res://browse">
+        <TabViewItem title="Departments" ios:iconSource="res://tabIcons/browse" android:iconSource="res://browse">
             <Frame defaultPage="browse/browse-page"></Frame>
         </TabViewItem>
 

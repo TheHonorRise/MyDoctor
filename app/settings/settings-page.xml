@@ -4,11 +4,76 @@
     xmlns="http://schemas.nativescript.org/tns.xsd">
 
     <ActionBar class="action-bar">
-        <Label class="action-bar-title" text="Settings"></Label>
+        <Label class="action-bar-title" style="color:white;" text="Settings"></Label>
     </ActionBar>
 
-    <GridLayout class="page-content">
-        <Label class="page-icon fa" text="&#xf002;"></Label>
-        <Label class="page-placeholder" text="<!-- Settings page content goes here -->"></Label>
-    </GridLayout>
+  
+		<DockLayout>
+		
+		
+		<StackLayout dock="top" height="90%" width="100%" style="">
+			<ScrollView>
+			
+				<StackLayout style="font-size:18;">
+					<StackLayout alignItems="center">
+						<Image src="~/images/profilepic.png" stretch="aspectFill" class="profilePic"> </Image>
+						<Label text="Aurora Mary" color="firebrick" fontSize="19" fontWeight="bold" textAlignment="center" />
+										<StackLayout class="aboutContainer">
+											
+                                         
+
+                                        
+										<Label text="" style="font-size:16;color:grey; text-align:right; vertical-align:right;" class="font-awesome" />
+										
+
+
+                                         <StackLayout orientation="horizontal" class="aboutRow" style="margin-top:0;">
+												<Label text="" style="font-size:16;color:firebrick; " class="font-awesome" />
+												<Label text="Birth" style="font-size:16;color:#000;margin-left:6;" class="font-awesome" />
+											</StackLayout>
+
+
+                                            <StackLayout orientation="horizontal" class="aboutRow">
+												<Label text="" style="font-size:16;color:firebrick;" class="font-awesome" />
+												<Label text="Telephone" style="font-size:16;color:#000;margin-left:6;" class="font-awesome" />
+											</StackLayout>
+
+                                            <StackLayout orientation="horizontal" class="aboutRow">
+												<Label text="" style="font-size:16;color:firebrick;" class="font-awesome" />
+												<Label text="Email" style="font-size:16;color:#000;margin-left:6;" class="font-awesome" />
+											</StackLayout>
+
+                                             <StackLayout orientation="horizontal" class="aboutRow" >
+												<Label text="" style="font-size:18; color:firebrick;" class="font-awesome" />
+												<Label text="adresse" style="font-size:16;color:#000;margin-left:9;margin-top:1;" class="font-awesome" />
+											</StackLayout>
+
+
+
+					
+										</StackLayout>
+										<StackLayout orientation="horizontal" class="followersContainer">
+											<StackLayout width="33%">
+												<Label text="6" class="followersTxtValue"/>
+												<Label text="Posts "  class="followersTxt"/> 
+											</StackLayout>
+											<StackLayout width="33%">
+												<Label text="2300" class="followersTxtValue"/>
+												<Label text="Followers "  class="followersTxt"/> 
+											</StackLayout>
+											<StackLayout width="33%">
+													<Label text="400" class="followersTxtValue" />
+													<Label text="Following "  class="followersTxt" />
+											</StackLayout>
+										</StackLayout>
+									</StackLayout>
+								<Button text="Log out" tap="{{  }}" class="btn btn-danger m-t-20" />
+									
+								</StackLayout>
+							
+			
+							</ScrollView>
+		 </StackLayout>
+		</DockLayout>
+    
 </Page>
