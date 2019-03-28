@@ -13,9 +13,10 @@
 			<StackLayout class="input-field">
 				<TextField id="password" text="{{ password }}" class="input" hint="Password" secure="true" />
 			</StackLayout>
-			<Switch checked="{{ isDoctor }}" isEnabled="true" id="my-switch" style="color:firebrick; background-color:rgb(243, 138, 138);"/>
+			<Label text="doctor ?" class="login-label h3 text-center" ></Label>
+			<Switch checked="{{ isDoctor }}" isEnabled="true" id="my-switch" class="" style="color:firebrick; background-color:rgb(243, 138, 138);"/>
 			<Button text="Log In" tap="{{ submit }}" class="btn btn-primary margin" />
-			<Label text="Forgot your password?" class="login-label" tap=" forgotPassword "/>
+			<Label text="Forgot your password?" class="login-label centered" tap=" forgotPassword "/>
 			<Label text="{{ error }}" class="login-label"/>
 		</StackLayout>
 
