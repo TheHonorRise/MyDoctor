@@ -4,11 +4,19 @@
     xmlns="http://schemas.nativescript.org/tns.xsd">
 
     <ActionBar class="action-bar">
-        <Label class="action-bar-title" text="Search"></Label>
+        <Label class="action-bar-title" style="color:white;" text="Search"></Label>
     </ActionBar>
 
-    <GridLayout class="page-content">
-        <Label class="page-icon fa" text="&#xf002;"></Label>
-        <Label class="page-placeholder" text="<!-- Search page content goes here -->"></Label>
-    </GridLayout>
+    
+      <StackLayout class="p-20">
+		<StackLayout class="input-field">
+			<Label text="&#xf002; Search patients" class="label m-b-5 fa" style="font-size: 20em; color:grey;">    </Label>
+			<StackLayout >
+            <TextField text="{{ firstName }}" hint="Nom" />
+            
+            </StackLayout>
+		</StackLayout>
+	</StackLayout>
+
+
 </Page>

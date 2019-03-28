@@ -5,7 +5,7 @@
     xmlns:lv="nativescript-ui-listview">
 
     <ActionBar class="action-bar">
-        <Label class="action-bar-title" text="My Patients"></Label>
+        <Label class="action-bar-title" style="color:white;" text="My Patients"></Label>
     </ActionBar>
 
     <GridLayout rows="*">

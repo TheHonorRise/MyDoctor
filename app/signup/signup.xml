@@ -5,7 +5,7 @@
         <StackLayout class="page">
             <StackLayout class="form">
 
-                <Label class="header centered h2" text="MySignals" color="firebrick" />
+                <Label class="header centered h2" text="MyDoctor" color="firebrick" />
                 <StackLayout class="input-field">
                     <TextField text="{{ firstName }}" hint="Nom" />
 
