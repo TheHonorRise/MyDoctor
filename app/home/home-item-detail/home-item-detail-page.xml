@@ -35,7 +35,7 @@
                                     <FlexboxLayout flexDirection="column"
                                                    style="padding: 15 10">
                                         <Image width="55" marginBottom="10"
-                                               src="http://192.168.43.240:8080/heartbeat.png" />
+                                               src="http://192.168.1.103:8080/heartbeat.png" />
                                         <Label text="{{ lastMesure[0].value }}" class="val" />
                                         <Label text="bpm" class="sub" />
                                     </FlexboxLayout>
@@ -48,7 +48,7 @@
                                     <FlexboxLayout flexDirection="column"
                                                    style="padding: 15 10">
                                         <Image width="55" marginBottom="10"
-                                               src="http://192.168.43.240:8080/bloodPre.png" />
+                                               src="http://192.168.1.103:8080/bloodPre.png" />
                                         <Label text="{{ lastMesure[1].value }}" class="val" />
                                         <Label text="mm Hg" class="sub" />
                                     </FlexboxLayout>
@@ -86,7 +86,7 @@
                                     <FlexboxLayout flexDirection="column"
                                                    style="padding: 15 10">
                                         <Image width="55" marginBottom="10"
-                                               src="http://192.168.43.240:8080/glycemie.png" />
+                                               src="http://192.168.1.103:8080/glycemie.png" />
                                         <Label text="{{ lastMesure[4].value }}" class="val" />
                                         <Label text="g/l" class="sub" />
                                     </FlexboxLayout>

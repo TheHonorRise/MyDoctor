@@ -4,9 +4,9 @@ const appSettings = require("application-settings");
 
 function LoginViewModel() {
     const viewModel = observableModule.fromObject({
-        email: "hamada@gmail.com",
-        password: "Half.Blood.2491",
-        isDoctor: true,
+        email: "chci@gmail.com",
+        password: "amada",
+        isDoctor: false,
         _id : "",
         status : 1,
         error : "",
@@ -15,7 +15,7 @@ function LoginViewModel() {
             const page = button.page;
             const myFrame = page.frame;
             if (this.isDoctor) {
-                fetch("http://192.168.43.240:8080/login", {
+                fetch("http://192.168.1.103:8080/login", {
                     method: "POST",
                     headers: { "content-type": "application/json" },
                     body: JSON.stringify({
@@ -43,7 +43,7 @@ function LoginViewModel() {
                     console.log(e);
                 });
             }else {
-                fetch("http://192.168.43.240:8080/loginPatient", {
+                fetch("http://192.168.1.103:8080/loginPatient", {
                     method: "POST",
                     headers: { "content-type": "application/json" },
                     body: JSON.stringify({

@@ -4,12 +4,12 @@
             <Frame defaultPage="patient/home/home-page"></Frame>
         </TabViewItem>
 
-        <TabViewItem title="Doctor" ios:iconSource="res://tabIcons/browse" android:iconSource="res://browse">
-            <Frame defaultPage="patient/doctor/doctor-profile"></Frame>
-        </TabViewItem>
+        <!--<TabViewItem title="Doctor" ios:iconSource="res://tabIcons/browse" android:iconSource="res://browse">-->
+            <!--<Frame defaultPage="patient/doctor/doctor-profile"></Frame>-->
+        <!--</TabViewItem>-->
 
-        <TabViewItem title="Settings" ios:iconSource="res://tabIcons/settings" android:iconSource="res://settings">
-            <Frame defaultPage="patient/settings/settings-page"></Frame>
-        </TabViewItem>
+        <!--<TabViewItem title="Settings" ios:iconSource="res://tabIcons/settings" android:iconSource="res://settings">-->
+            <!--<Frame defaultPage="patient/settings/settings-page"></Frame>-->
+        <!--</TabViewItem>-->
     </TabView>
 </Page>

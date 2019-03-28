@@ -9,7 +9,7 @@ async function HomePageModel(context) {
     let c = '-';
 
     const sens = ["heartBeat", "blood presure", "spo2", "temp", "clucometre"];
-    await fetch(`http://192.168.43.240:8080/mesure/${sens[0]}/${context._id}`, {
+    await fetch(`http://192.168.1.103:8080/mesure/${sens[0]}/${context._id}`, {
         method: "GET",
         headers: { "content-type": "application/json" }
     })
@@ -20,7 +20,7 @@ async function HomePageModel(context) {
         .catch((e) => {
             console.log(e);
         });
-    await fetch(`http://192.168.43.240:8080/mesure/${sens[1]}/${context._id}`, {
+    await fetch(`http://192.168.1.103:8080/mesure/${sens[1]}/${context._id}`, {
         method: "GET",
         headers: { "content-type": "application/json" }
     })
@@ -31,7 +31,7 @@ async function HomePageModel(context) {
         .catch((e) => {
             console.log(e);
         });
-    await fetch(`http://192.168.43.240:8080/mesure/${sens[2]}/${context._id}`, {
+    await fetch(`http://192.168.1.103:8080/mesure/${sens[2]}/${context._id}`, {
         method: "GET",
         headers: { "content-type": "application/json" }
     })
@@ -42,7 +42,7 @@ async function HomePageModel(context) {
         .catch((e) => {
             console.log(e);
         });
-    await fetch(`http://192.168.43.240:8080/mesure/${sens[3]}/${context._id}`, {
+    await fetch(`http://192.168.1.103:8080/mesure/${sens[3]}/${context._id}`, {
         method: "GET",
         headers: { "content-type": "application/json" }
     })
@@ -53,7 +53,7 @@ async function HomePageModel(context) {
         .catch((e) => {
             console.log(e);
         });
-    await fetch(`http://192.168.43.240:8080/mesure/${sens[4]}/${context._id}`, {
+    await fetch(`http://192.168.1.103:8080/mesure/${sens[4]}/${context._id}`, {
         method: "GET",
         headers: { "content-type": "application/json" }
     })
@@ -105,7 +105,7 @@ async function HomePageModel(context) {
             this.dialogOpen = true;
 
             const tappedItem = args.object.id;
-            fetch(`http://192.168.43.240:8080/mesure/${tappedItem}/${this.patientId}`, {
+            fetch(`http://192.168.1.103:8080/mesure/${tappedItem}/${this.patientId}`, {
                 method: "GET",
                 headers: { "content-type": "application/json" }
             })

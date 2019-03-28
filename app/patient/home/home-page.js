@@ -8,21 +8,22 @@ const appSettings = require("application-settings");
 async function onNavigatingTo(args) {
     const page = args.object;
     // console.log(args.context);
-    var context = {};
+    var context ;
 
     const id = appSettings.getString("_id");
-    await fetch(`http://192.168.43.240:8080/patient/${id}`, {
-        method: "GET",
+
+    await fetch(`http://192.168.1.103:8080/patient/${id}`, {
+        method: "POST",
         headers: { "content-type": "application/json" }
     })
         .then((r) => r.json())
         .then((response) => {
+            console.log(response);
             context = response;
         })
         .catch((e) => {
             console.log(e);
         });
-
 
     page.bindingContext = await HomePatientModel(context);
 
