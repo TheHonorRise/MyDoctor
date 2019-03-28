@@ -2,11 +2,16 @@ const observableModule = require("tns-core-modules/data/observable");
 const appSettings = require("application-settings");
 
 
-function LoginViewModel() {
+function SignUpViewModel() {
     const viewModel = observableModule.fromObject({
-        email: "hamada@gmail.com",
-        password: "Half.Blood.2491",
-        _id : "",
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        repassword: "",
+        address: "",
+        tele: 212,
+        birth: Date.now(),
         status : 1,
         error : "",
         submit(args) {
@@ -14,12 +19,17 @@ function LoginViewModel() {
             const page = button.page;
             const myFrame = page.frame;
 
-            fetch("http://192.168.43.240:8080/login", {
+            fetch("http://192.168.43.240:8080/doctor", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify({
+                    firstName: this.firstName,
+                    lastName: this.lastName,
                     email: this.email,
-                    password: this.password
+                    password: this.password,
+                    address: this.address,
+                    phone: this.tele,
+                    birthday: this.birth
                 })
             })
                 .then((r) => {
@@ -32,24 +42,21 @@ function LoginViewModel() {
                     if (this.status == 400) {
                         this.error = response.error;
                     } else {
-                        console.log(response);
-                        appSettings.setString("_id", response._id);
-                        appSettings.setBoolean("logged", true);
-                        myFrame.navigate("tab-view");
+                        myFrame.navigate("login/login");
                     }
                 }).catch((e) => {
                 console.log(e);
             });
         },
-        toSignUp: function (args) {
+        toLogin: function (args) {
             const button = args.object;
             const page = button.page;
             const myFrame = page.frame;
-            myFrame.navigate("signup/signup");
+            myFrame.navigate("login/login");
         }
     });
 
     return viewModel;
 }
 
-module.exports = LoginViewModel;
+module.exports = SignUpViewModel;

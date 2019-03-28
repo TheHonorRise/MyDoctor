@@ -7,16 +7,16 @@
 
                 <Label class="header centered h2" text="MySignals" color="firebrick" />
                 <StackLayout class="input-field">
-                    <TextField text="{{ textFieldValue }}" hint="Nom" />
+                    <TextField text="{{ firstName }}" hint="Nom" />
 
                 </StackLayout>
 
                 <StackLayout class="input-field">
-                    <TextField text="{{ textFieldValue }}" hint="Prenom" />
+                    <TextField text="{{ lastName }}" hint="Prenom" />
                 </StackLayout>
 
                 <StackLayout class="input-field">
-                    <TextField id="hamid" hint="Email" />
+                    <TextField text="{{ email }}" hint="Email" />
                 </StackLayout>
 
                 <StackLayout class="input-field">
@@ -29,19 +29,18 @@
                 </StackLayout>
 
                 <StackLayout class="input-field">
-                    <TextField text="{{ textFieldValue }}" hint="Adresse" />
+                    <TextField text="{{ address }}" hint="Adresse" />
                 </StackLayout>
 
                 <StackLayout class="input-field">
-                    <TextField text="{{ textFieldValue }}" hint="Téléphone" />
+                    <TextField text="{{ tele }}" hint="Téléphone" />
                 </StackLayout>
 
 
                 <StackLayout class="input-field">
                     <Label class="title" text="Date de naissance" textWrap="true"
                         marginBottom="-8"></Label>
-                    <DatePicker year="{{ currentYear }}" month="{{ currentMonth }}"
-                        day="{{ currentDay}}" minDate="1970-01-01" maxDate="2100-12-31" />
+                    <DatePicker date="{{ birth }}" minDate="1970-01-01" maxDate="2100-12-31" />
                 </StackLayout>
 
 
@@ -50,7 +49,7 @@
                 <Label text="{{ error }}" class="login-label" />
 
 
-                <Label class="login-label sign-up-label centered" tap="{{}}">
+                <Label class="login-label sign-up-label centered" tap="{{ toLogin }}">
                     <FormattedString>
                         <Span text="You have an account ? " />
                         <Span text="Log in" class="bold" />

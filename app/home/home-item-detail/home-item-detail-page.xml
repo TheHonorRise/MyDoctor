@@ -12,17 +12,19 @@
             <GridLayout rows="auto,70,*" col="auto">
 
                 <!-- blue main area -->
-                <StackLayout row="0" style="background:#25325c; color:white">
-                    <StackLayout height="100%" style="background:#021042; border-radius:12 12 0 0; padding:20 0 30 0">
+                <StackLayout row="0" style="color:white">
+                    <StackLayout height="100%" style="background:#021042; border-radius:0 0 5 5; padding:20 0 30 0">
+
+
+
                         <FlexboxLayout alignItems="center" width="100%"
                                        flexDirection="row" style="padding-right:15;">
-                            <FlexboxLayout flexDirection="column">
-                                <Label class="subheading" text="{{'Welcome back, ' + lastName}}" />
-                                <Label class="heading light" text="Your Daily Overview" />
+                            <FlexboxLayout flexDirection="column" width="100%">
+                                <Image width="100" marginBottom="10"
+                                       src="http://i.pravatar.cc/300" />
+                                <Label class="heading light text-center" marginBottom="3" text="{{ lastName + ' ' + firstName  }}" />
+                                <Label class="heading light text-center" text="les mesures les plus recents" />
                             </FlexboxLayout>
-                            <Label text="&#xf1c4;" tap="{{ submenu }}" class="icon"
-                                   style="margin-top:-10;color:#ff2e63;font-size:24; text-align:right;"
-                                   flexGrow="1" />
                         </FlexboxLayout>
                         <ScrollView orientation="horizontal"
                                     scrollBarIndicatorVisible="false">
@@ -84,7 +86,7 @@
                                     <FlexboxLayout flexDirection="column"
                                                    style="padding: 15 10">
                                         <Image width="55" marginBottom="10"
-                                               src="~/App_Resources/ico-walk_1.png" />
+                                               src="http://192.168.43.240:8080/glycemie.png" />
                                         <Label text="{{ lastMesure[4].value }}" class="val" />
                                         <Label text="g/l" class="sub" />
                                     </FlexboxLayout>
@@ -97,14 +99,13 @@
 
                 <!-- Leaderboard -->
                 <StackLayout class="card leaderboard" orientation="vertical"
-                             row="2" style="margin:10 15 0 15;padding: 0">
+                             row="2" style="margin:10 15 0 15;padding: 0" marginTop="-50">
                     <FlexboxLayout width="100%" flexDirection="row"
                                    justifyContent="space-between" alignItems="flex-end"
                                    style=" background:#fafbfc; border-radius: 3 3 0 0;">
                         <FlexboxLayout flexDirection="row-reverse" alignItems="center"
                                        class="objective" alignSelf="flex-start" style="padding-top:20">
-                            <Label class="subheading" text="Week #23" style="padding-left:10" />
-                            <Label class="heading dark" text="Leaderboard" />
+                            <Label class="heading dark" text="Recommendations" />
                         </FlexboxLayout>
                         <Image width="50" alignSelf="flex-start" src="~/App_Resources/badge.png" />
                     </FlexboxLayout>
@@ -164,29 +165,6 @@
         <!-- Bottom Naviagtion -->
         <StackLayout row="1" style="padding:10 15 10 15;" backgroundColor="#ebf1f2"
                      class="bottom-nav-wrapper">
-            <FlexboxLayout alignItems="center" flexDirection="row" id="bottom-nav">
-                <StackLayout flexGrow="1" class="ico active" height="100%">
-                    <Image class="ico-wrapper" width="100%" />
-                    <Label style="text-align:center;" class="icon" flexGrow="1"
-                           text="&#xf237;" />
-                </StackLayout>
-                <StackLayout flexGrow="1" class="ico" height="100%">
-                    <Image class="ico-wrapper" width="100%" />
-                    <Label style="text-align:center;" class="icon" flexGrow="1"
-                           text="&#xf19d;" />
-                </StackLayout>
-                <Image class="ico-plus" tap="{{ submenu }}" width="100%" src="~/App_Resources/ico-plus.png" />
-                <StackLayout flexGrow="1" class="ico" height="100%">
-                    <Image class="ico-wrapper" width="100%" />
-                    <Label style="text-align:center;" class="icon" flexGrow="1"
-                           text="&#xf19a;" />
-                </StackLayout>
-                <StackLayout flexGrow="1" class="ico" height="100%">
-                    <Image class="ico-wrapper" width="100%" />
-                    <Label style="text-align:center;" class="icon " flexGrow="1"
-                           text="&#xf140;" />
-                </StackLayout>
-            </FlexboxLayout>
         </StackLayout>
 
         <!-- dialog -->

@@ -82,16 +82,26 @@ async function HomeItemDetailViewModel(context) {
             { name: 'clucometre', value: c }
         ],
         calories_data: [
-            { day: Date.now(),
-count: 204 },
-            { day: Date.now(),
-count: 204 },
-            { day: Date.now(),
-count: 204 },
-            { day: Date.now(),
-count: 204 },
-            { day: Date.now(),
-count: 210 }
+            {
+                day: Date.now(),
+                count: 204
+            },
+            {
+                day: Date.now(),
+                count: 204
+            },
+            {
+                day: Date.now(),
+                count: 204
+            },
+            {
+                day: Date.now(),
+                count: 204
+            },
+            {
+                day: Date.now(),
+                count: 210
+            }
         ],
         showDialog: function (args) {
             this.dialogOpen = true;

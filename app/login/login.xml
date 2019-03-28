@@ -19,7 +19,7 @@
 			<Label text="{{ error }}" class="login-label"/>
 		</StackLayout>
 
-		<Label class="login-label sign-up-label" tap="{{}}">
+		<Label class="login-label sign-up-label" tap="{{ toSignUp }}">
 			<FormattedString>
 				<Span text="Don’t have an account?  " />
 				<Span text="Sign up" class="bold" />
