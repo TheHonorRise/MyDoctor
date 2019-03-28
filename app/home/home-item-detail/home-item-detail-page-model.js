@@ -72,6 +72,7 @@ async function HomeItemDetailViewModel(context) {
         lastName: context.lastName,
         patientId: context._id,
         image: context.image,
+        RocDate: "20/mar/2018",
         description: "hamid tagona",
         dialogOpen: false,
         lastMesure: [

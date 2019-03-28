@@ -2,9 +2,9 @@
 	<FlexboxLayout class="page">
 		<StackLayout class="form">
 			<Image class="logo image" src="~/images/logo2.png" alt="hamid" />
-			<Label class="h3 title centered " text="My Doctor" style="color:firebrick;"/>
+			<!--<Label class="h3 title centered " text="My Doctor" style="color:firebrick;"/>-->
 
-			<StackLayout class="input-field">
+			<StackLayout class="input-field ">
 				<TextField id="hamid" class="input" text="{{ email }}" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none"
 				 returnKeyType="next" />
 				<Label class="hr-light" />
@@ -20,7 +20,7 @@
 			<Label text="{{ error }}" class="login-label"/>
 		</StackLayout>
 
-		<Label class="login-label sign-up-label" tap="{{ toSignUp }}">
+		<Label class="login-label sign-up-label " tap="{{ toSignUp }}">
 			<FormattedString>
 				<Span text="Don’t have an account?  " />
 				<Span text="Sign up" class="bold" />

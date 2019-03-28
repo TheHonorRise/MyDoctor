@@ -175,59 +175,62 @@
                 <GridLayout rows="auto, *" xmlns:chart="nativescript-ui-chart"
                             class="modal_chart">
 
-                    <chart:RadCartesianChart row="1" selectionMode="Single">
-                        <chart:RadCartesianChart.horizontalAxis>
-                            <chart:DateTimeContinuousAxis lineColor="#ebf1f2"
-                                                   lineThickness="2" labelTextColor="#021042"
-                                                   labelMargin="10" android:labelMargin="20"
-                                                          majorStep="Month" dateFormat="MMM-dd" labelFitMode="Rotate" labelRotationAngle="1.2" />
-                        </chart:RadCartesianChart.horizontalAxis>
-                        <chart:RadCartesianChart.verticalAxis>
-                            <chart:LinearAxis lineColor="#ebf1f2" labelFormat="%.0f"
-                                              lineThickness="2" labelTextColor="#021042"
-                                              labelMargin="10" android:labelMargin="20" />
-                        </chart:RadCartesianChart.verticalAxis>
-                        <chart:RadCartesianChart.series>
-                            <chart:AreaSeries seriesName="Area"
-                                              categoryProperty="day" items="{{ calories_data }}"
-                                              stackMode="Stack" valueProperty="count"
-                                              selectionMode="Series" />
-                        </chart:RadCartesianChart.series>
-                        <chart:RadCartesianChart.grid>
-                            <chart:RadCartesianChartGrid
-                                    horizontalLinesVisible="true"
-                                    verticalLinesVisible="false"
-                                    verticalStripLinesVisible="false"
-                                    horizontalStripLinesVisible="false"
-                                    horizontalStrokeColor="#e5e5e5" />
-                        </chart:RadCartesianChart.grid>
-                        <chart:RadCartesianChart.palettes>
-                            <chart:Palette seriesName="Area">
-                                <chart:Palette.entries>
-                                    <chart:PaletteEntry android:fillColor="rgba(235,241,242,0.6)"
-                                                        ios:fillColor="rgba(235,241,242,0.6)"
-                                                        strokeColor="#ff2e63" strokeWidth="3"
-                                                        android:strokeWidth="6" />
-                                    <chart:PaletteEntry android:fillColor="rgba(235,241,242,0.6)"
-                                                        ios:fillColor="rgba(235,241,242,0.6)"
-                                                        strokeColor="#ff2e63" strokeWidth="3"
-                                                        android:strokeWidth="6" />
-                                </chart:Palette.entries>
-                            </chart:Palette>
-                            <chart:Palette seriesName="Area" seriesState="Selected">
-                                <chart:Palette.entries>
-                                    <chart:PaletteEntry android:fillColor="rgba(235,241,242,1)"
-                                                        ios:fillColor="rgba(235,241,242,1)"
-                                                        strokeColor="#ff2e63" strokeWidth="3"
-                                                        android:strokeWidth="6" />
-                                    <chart:PaletteEntry android:fillColor="rgba(235,241,242,1)"
-                                                        ios:fillColor="rgba(235,241,242,1)"
-                                                        strokeColor="#ff2e63" strokeWidth="3"
-                                                        android:strokeWidth="6" />
-                                </chart:Palette.entries>
-                            </chart:Palette>
-                        </chart:RadCartesianChart.palettes>
-                    </chart:RadCartesianChart>
+
+
+
+                    <!--<chart:RadCartesianChart row="1" selectionMode="Single">-->
+                        <!--<chart:RadCartesianChart.horizontalAxis>-->
+                            <!--<chart:DateTimeContinuousAxis lineColor="#ebf1f2"-->
+                                                   <!--lineThickness="2" labelTextColor="#021042"-->
+                                                   <!--labelMargin="10" android:labelMargin="20"-->
+                                                          <!--majorStep="Month" dateFormat="MMM-dd" labelFitMode="Rotate" labelRotationAngle="1.2" />-->
+                        <!--</chart:RadCartesianChart.horizontalAxis>-->
+                        <!--<chart:RadCartesianChart.verticalAxis>-->
+                            <!--<chart:LinearAxis lineColor="#ebf1f2" labelFormat="%.0f"-->
+                                              <!--lineThickness="2" labelTextColor="#021042"-->
+                                              <!--labelMargin="10" android:labelMargin="20" />-->
+                        <!--</chart:RadCartesianChart.verticalAxis>-->
+                        <!--<chart:RadCartesianChart.series>-->
+                            <!--<chart:AreaSeries seriesName="Area"-->
+                                              <!--categoryProperty="day" items="{{ calories_data }}"-->
+                                              <!--stackMode="Stack" valueProperty="count"-->
+                                              <!--selectionMode="Series" />-->
+                        <!--</chart:RadCartesianChart.series>-->
+                        <!--<chart:RadCartesianChart.grid>-->
+                            <!--<chart:RadCartesianChartGrid-->
+                                    <!--horizontalLinesVisible="true"-->
+                                    <!--verticalLinesVisible="false"-->
+                                    <!--verticalStripLinesVisible="false"-->
+                                    <!--horizontalStripLinesVisible="false"-->
+                                    <!--horizontalStrokeColor="#e5e5e5" />-->
+                        <!--</chart:RadCartesianChart.grid>-->
+                        <!--<chart:RadCartesianChart.palettes>-->
+                            <!--<chart:Palette seriesName="Area">-->
+                                <!--<chart:Palette.entries>-->
+                                    <!--<chart:PaletteEntry android:fillColor="rgba(235,241,242,0.6)"-->
+                                                        <!--ios:fillColor="rgba(235,241,242,0.6)"-->
+                                                        <!--strokeColor="#ff2e63" strokeWidth="3"-->
+                                                        <!--android:strokeWidth="6" />-->
+                                    <!--<chart:PaletteEntry android:fillColor="rgba(235,241,242,0.6)"-->
+                                                        <!--ios:fillColor="rgba(235,241,242,0.6)"-->
+                                                        <!--strokeColor="#ff2e63" strokeWidth="3"-->
+                                                        <!--android:strokeWidth="6" />-->
+                                <!--</chart:Palette.entries>-->
+                            <!--</chart:Palette>-->
+                            <!--<chart:Palette seriesName="Area" seriesState="Selected">-->
+                                <!--<chart:Palette.entries>-->
+                                    <!--<chart:PaletteEntry android:fillColor="rgba(235,241,242,1)"-->
+                                                        <!--ios:fillColor="rgba(235,241,242,1)"-->
+                                                        <!--strokeColor="#ff2e63" strokeWidth="3"-->
+                                                        <!--android:strokeWidth="6" />-->
+                                    <!--<chart:PaletteEntry android:fillColor="rgba(235,241,242,1)"-->
+                                                        <!--ios:fillColor="rgba(235,241,242,1)"-->
+                                                        <!--strokeColor="#ff2e63" strokeWidth="3"-->
+                                                        <!--android:strokeWidth="6" />-->
+                                <!--</chart:Palette.entries>-->
+                            <!--</chart:Palette>-->
+                        <!--</chart:RadCartesianChart.palettes>-->
+                    <!--</chart:RadCartesianChart>-->
                 </GridLayout>
                 <Button class="btn btn-outline" text="Cancel" tap="{{closeDialog}}"></Button>
             </StackLayout>

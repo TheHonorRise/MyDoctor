@@ -60,8 +60,8 @@
                                              width="100" style="text-align:center">
                                     <FlexboxLayout flexDirection="column"
                                                    style="padding: 15 10">
-                                        <Image width="55" marginBottom="10"
-                                               src="~/App_Resources/ico-walk_1.png" />
+                                        <Image width="55" height="55" marginBottom="10"
+                                               src="~/images/spo2.JPG" />
                                         <Label text="{{ lastMesure[2].value }}" class="val" />
                                         <Label text="%" class="sub" />
                                     </FlexboxLayout>
@@ -73,8 +73,8 @@
                                              style="text-align:center;">
                                     <FlexboxLayout flexDirection="column"
                                                    style="padding: 15 10">
-                                        <Image width="55" marginBottom="10"
-                                               src="~/App_Resources/ico-water_1.png" />
+                                        <Image width="55" height="55" marginBottom="10"
+                                               src="~/images/temperature.jpg" />
                                         <Label text="{{ lastMesure[3].value }}" class="val" />
                                         <Label text="C°" class="sub" />
                                     </FlexboxLayout>
@@ -112,14 +112,11 @@
                     <StackLayout orientation="vertical" style="padding:15 0 ; margin:0 15;">
                         <FlexboxLayout class="list" flexDirection="row"
                                        alignItems="center">
-                            <Image class="story-img" src="https://pbs.twimg.com/profile_images/1036583277488787456/VDBW6mWj.jpg" />
                             <FlexboxLayout flexGrow="1" flexDirection="column">
-                                <Label class="user" text="Bruce Wayne" />
+                                <Label class="user" text="Recommendations #1" />
                                 <Label class="heading light" style=" font-size:16; color:#ff2e63;font-weight:500; margin-bottom:0; margin-top:0">
                                     <FormattedString>
-                                        <Span text="843" style="font-weight:500" />
-                                        <Span style="font-weight:400; font-size:10;"
-                                              text=" kcal" />
+                                        <Span text="{{ RocDate }}" style="font-weight:500" />
                                     </FormattedString>
                                 </Label>
                             </FlexboxLayout>
@@ -128,14 +125,11 @@
                         <Image width="100%" src="" style="background:#ebf1f2;height:1; margin:15 0;" />
                         <FlexboxLayout class="list" flexDirection="row"
                                        alignItems="center">
-                            <Image class="story-img" src="https://d3iw72m71ie81c.cloudfront.net/female-7.jpg" />
                             <FlexboxLayout flexGrow="1" flexDirection="column">
-                                <Label class="user" text="Selina Kyle" />
+                                <Label class="user" text="Recommendations #2" />
                                 <Label class="heading light" style=" font-size:16; color:#ff2e63;font-weight:500; margin-bottom:0; margin-top:0">
                                     <FormattedString>
-                                        <Span text="764" style="font-weight:500" />
-                                        <Span style="font-weight:400; font-size:10;"
-                                              text=" kcal" />
+                                        <Span text="{{ RocDate }}" style="font-weight:500"  />
                                     </FormattedString>
                                 </Label>
                             </FlexboxLayout>
@@ -144,14 +138,11 @@
                         <Image width="100%" src="" style="background:#ebf1f2;height:1; margin:15 0;" />
                         <FlexboxLayout class="list" flexDirection="row"
                                        alignItems="center">
-                            <Image class="story-img" src="~/App_Resources/avatar.png" />
                             <FlexboxLayout flexGrow="1" flexDirection="column">
-                                <Label class="user" text="Harvey Dent" />
+                                <Label class="user" text="Recommendations #3" />
                                 <Label class="heading light" style=" font-size:16; color:#ff2e63;font-weight:500; margin-bottom:0; margin-top:0">
                                     <FormattedString>
-                                        <Span text="730" style="font-weight:500" />
-                                        <Span style="font-weight:400; font-size:10;"
-                                              text=" kcal" />
+                                        <Span text="{{ RocDate }}" style="font-weight:500" />
                                     </FormattedString>
                                 </Label>
                             </FlexboxLayout>
