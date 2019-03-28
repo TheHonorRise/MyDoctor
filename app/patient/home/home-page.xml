@@ -1,9 +1,9 @@
 <Page id="main" loaded="pageLoaded" navigatingTo="onNavigatingTo" xmlns="http://www.nativescript.org/tns.xsd"
       backgroundColor="#ebf1f2" class="page">
-    <ActionBar height="40" flat="true" title="Home" class="action-bar">
-        <NavigationButton visibility="hidden"></NavigationButton>
-        <Image src="~/App_Resources/logo.png" />
-    </ActionBar>
+    <!--<ActionBar height="40" flat="true" title="Home" class="action-bar">-->
+        <!--<NavigationButton visibility="hidden"></NavigationButton>-->
+        <!--<Image src="~/App_Resources/logo.png" />-->
+    <!--</ActionBar>-->
     <GridLayout columns="*" rows="*, auto" class="{{ dialogOpen ? 'dialogOpen page' : 'page' }}"
                 backgroundColor="#ebf1f2">
         <!-- scroll view -->

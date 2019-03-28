@@ -6,10 +6,15 @@ function onNavigatingTo(args) {
     component.bindingContext = new LoginViewModel();
 
     const logged = appSettings.getBoolean("logged");
+    const isDoctor = appSettings.getBoolean("isDoctor");
     if (logged) {
         const page = component.page;
         const myFrame = page.frame;
-        myFrame.navigate("tab-view");
+        if (isDoctor){
+            myFrame.navigate("tab-view");
+        }else {
+            myFrame.navigate("hamid-patient");
+        }
     }
 }
 // exports.submit = args => {

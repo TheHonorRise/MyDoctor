@@ -13,7 +13,7 @@
 			<StackLayout class="input-field">
 				<TextField id="password" text="{{ password }}" class="input" hint="Password" secure="true" />
 			</StackLayout>
-
+			<Switch checked="{{ isDoctor }}" isEnabled="true" id="my-switch"/>
 			<Button text="Log In" tap="{{ submit }}" class="btn btn-primary m-t-20" />
 			<Label text="Forgot your password?" class="login-label" tap=" forgotPassword "/>
 			<Label text="{{ error }}" class="login-label"/>
