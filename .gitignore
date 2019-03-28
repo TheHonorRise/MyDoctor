@@ -5,7 +5,6 @@ platforms/
 
 # NativeScript Template
 *.js.map
-*.css
 
 # Logs
 logs
