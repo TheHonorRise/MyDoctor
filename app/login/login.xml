@@ -1,7 +1,7 @@
 <Page loaded="onNavigatingTo" class="page" actionBarHidden="true" xmlns="http://www.nativescript.org/tns.xsd">
 	<FlexboxLayout class="page">
 		<StackLayout class="form">
-			<Image class="logo image" src="~/images/logo.png" alt="hamid" />
+			<Image class="logo image" src="~/images/logo2.png" alt="hamid" />
 			<Label class="h3 title centered " text="My Doctor" style="color:firebrick;"/>
 
 			<StackLayout class="input-field">

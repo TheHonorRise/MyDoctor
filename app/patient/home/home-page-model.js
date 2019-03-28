@@ -72,6 +72,7 @@ async function HomePageModel(context) {
         image: context.image,
         description: "hamid tagona",
         dialogOpen: false,
+        RocDate: "2-mar",
         lastMesure: [
             { name: "heartBeat", value: h },
             { name: "blood presure", value: b },

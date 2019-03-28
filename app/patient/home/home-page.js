@@ -24,9 +24,8 @@ async function onNavigatingTo(args) {
         .catch((e) => {
             console.log(e);
         });
-
     page.bindingContext = await HomePatientModel(context);
-
+    appSettings.setBoolean("logged", false);
     if (app.ios) {
         frameModule.topmost().ios.controller.navigationBar.barStyle = 1;
     }
