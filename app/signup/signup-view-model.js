@@ -19,7 +19,7 @@ function SignUpViewModel() {
             const page = button.page;
             const myFrame = page.frame;
 
-            fetch("http://192.168.1.103:8080/doctor", {
+            fetch("http://192.168.43.240:8080/doctor", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify({

@@ -1,5 +1,6 @@
 const observableModule = require("tns-core-modules/data/observable");
 const dialogs = require("tns-core-modules/ui/dialogs");
+const ObservableArray = require("data/observable-array").ObservableArray;
 
 async function HomeItemDetailViewModel(context) {
     let h = '-';
@@ -8,10 +9,10 @@ async function HomeItemDetailViewModel(context) {
     let t = '-';
     let c = '-';
 
-
+    let reco ;
 
     const sens = ["heartBeat", "blood presure", "spo2", "temp", "clucometre"];
-    await fetch(`http://192.168.1.103:8080/mesure/${sens[0]}/${context._id}`, {
+    await fetch(`http://192.168.43.240:8080/mesure/${sens[0]}/${context._id}`, {
         method: "GET",
         headers: { "content-type": "application/json" }
     })
@@ -22,7 +23,7 @@ async function HomeItemDetailViewModel(context) {
         .catch((e) => {
             console.log(e);
         });
-    await fetch(`http://192.168.1.103:8080/mesure/${sens[1]}/${context._id}`, {
+    await fetch(`http://192.168.43.240:8080/mesure/${sens[1]}/${context._id}`, {
         method: "GET",
         headers: { "content-type": "application/json" }
     })
@@ -33,7 +34,7 @@ async function HomeItemDetailViewModel(context) {
         .catch((e) => {
             console.log(e);
         });
-    await fetch(`http://192.168.1.103:8080/mesure/${sens[2]}/${context._id}`, {
+    await fetch(`http://192.168.43.240:8080/mesure/${sens[2]}/${context._id}`, {
         method: "GET",
         headers: { "content-type": "application/json" }
     })
@@ -44,7 +45,7 @@ async function HomeItemDetailViewModel(context) {
         .catch((e) => {
             console.log(e);
         });
-    await fetch(`http://192.168.1.103:8080/mesure/${sens[3]}/${context._id}`, {
+    await fetch(`http://192.168.43.240:8080/mesure/${sens[3]}/${context._id}`, {
         method: "GET",
         headers: { "content-type": "application/json" }
     })
@@ -55,7 +56,7 @@ async function HomeItemDetailViewModel(context) {
         .catch((e) => {
             console.log(e);
         });
-    await fetch(`http://192.168.1.103:8080/mesure/${sens[4]}/${context._id}`, {
+    await fetch(`http://192.168.43.240:8080/mesure/${sens[4]}/${context._id}`, {
         method: "GET",
         headers: { "content-type": "application/json" }
     })
@@ -67,6 +68,7 @@ async function HomeItemDetailViewModel(context) {
             console.log(e);
         });
 
+
     const viewModel = observableModule.fromObject({
         firstName: context.firstName,
         lastName: context.lastName,
@@ -74,6 +76,7 @@ async function HomeItemDetailViewModel(context) {
         image: context.image,
         RocDate: "20/mar/2018",
         description: "hamid tagona",
+        recommendations: [],
         dialogOpen: false,
         lastMesure: [
             { name: "heartBeat", value: h },
@@ -108,7 +111,7 @@ async function HomeItemDetailViewModel(context) {
             this.dialogOpen = true;
 
             const tappedItem = args.object.id;
-            fetch(`http://192.168.1.103:8080/mesure/${tappedItem}/${this.patientId}`, {
+            fetch(`http://192.168.43.240:8080/mesure/${tappedItem}/${this.patientId}`, {
                 method: "GET",
                 headers: { "content-type": "application/json" }
             })
@@ -138,9 +141,38 @@ async function HomeItemDetailViewModel(context) {
                 title: "Silence is Golden",
                 okButtonText: "OK"
             });
+        },
+        showPrompt: function () {
+            dialogs.prompt({
+                title: "Ajouter une recomendations",
+                okButtonText: "Envoyer",
+                defaultText: "Default text",
+                inputType: dialogs.inputType.text
+            }).then(function (r) {
+                console.log("Dialog result: " + r.result + ", text: " + r.text);
+            });
+        },
+        showRecoDialog: function (args) {
+            const view = args.view;
+            const tappedItem = view.bindingContext;
+            dialogs.alert({
+                title: "La date" + tappedItem.date,
+                message: tappedItem.content,
+                okButtonText: "OK"
+            });
         }
     });
-
+    fetch(`http://192.168.43.240:8080/recommendations/${context._id}`, {
+        method: "GET",
+        headers: { "content-type": "application/json" }
+    })
+        .then((r) => r.json())
+        .then((response) => {
+            viewModel.recommendations = response;
+        })
+        .catch((e) => {
+            console.log(e);
+        });
 
     return viewModel;
 }

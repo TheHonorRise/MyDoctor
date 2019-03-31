@@ -10,6 +10,7 @@ async function onNavigatingTo(args) {
     // console.log(args.context);
     page.bindingContext = await HomeItemDetailViewModel(args.context);
 
+
     if (app.ios) {
         frameModule.topmost().ios.controller.navigationBar.barStyle = 1;
     }
@@ -27,6 +28,7 @@ function onBackButtonTap(args) {
 
     page.frame.goBack();
 }
+
 
 exports.onNavigatingTo = onNavigatingTo;
 exports.onBackButtonTap = onBackButtonTap;

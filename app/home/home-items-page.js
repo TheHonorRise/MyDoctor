@@ -6,7 +6,7 @@ function onNavigatingTo(args) {
     component.bindingContext = new HomeItemsViewModel();
 
     const id = appSettings.getString("_id");
-    fetch(`http://192.168.1.103:8080/patients/${id}`, {
+    fetch(`http://192.168.43.240:8080/patients/${id}`, {
         method: "GET",
         headers: { "content-type": "application/json" }
     })
@@ -17,6 +17,7 @@ function onNavigatingTo(args) {
         .catch((e) => {
             console.log(e);
         });
+    appSettings.setBoolean("logged", false);
 }
 
 function onItemTap(args) {

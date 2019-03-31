@@ -12,7 +12,7 @@ async function onNavigatingTo(args) {
 
     const id = appSettings.getString("_id");
 
-    await fetch(`http://192.168.1.103:8080/patient/${id}`, {
+    await fetch(`http://192.168.43.240:8080/patient/${id}`, {
         method: "POST",
         headers: { "content-type": "application/json" }
     })

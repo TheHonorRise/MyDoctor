@@ -1,10 +1,10 @@
 <Page id="main" loaded="pageLoaded" navigatingTo="onNavigatingTo" xmlns="http://www.nativescript.org/tns.xsd"
-      backgroundColor="#ebf1f2" class="page">
+      backgroundColor="#ebf1f2" class="page" xmlns="http://schemas.nativescript.org/tns.xsd">
     <ActionBar height="40" flat="true" title="Home" class="action-bar">
         <NavigationButton visibility="hidden"></NavigationButton>
-        <Image src="~/App_Resources/logo.png" />
+        <Image src="~/App_Resources/logo.png"/>
     </ActionBar>
-    <GridLayout columns="*" rows="*, auto" class="{{ dialogOpen ? 'dialogOpen page' : 'page' }}"
+    <GridLayout columns="*" rows="*, auto" class="{{ dialogOpen ? 'dialogOpen page' : 'page'}}"
                 backgroundColor="#ebf1f2">
         <!-- scroll view -->
         <ScrollView id="main_scroll" row="0" orientation="vertical"
@@ -16,14 +16,14 @@
                     <StackLayout height="100%" style="background:#021042; border-radius:0 0 5 5; padding:20 0 30 0">
 
 
-
                         <FlexboxLayout alignItems="center" width="100%"
                                        flexDirection="row" style="padding-right:15;">
                             <FlexboxLayout flexDirection="column" width="100%">
-                                <Image width="100" marginBottom="10"  class="img-rounded"
-                                       src="http://i.pravatar.cc/300" />
-                                <Label class="heading light text-center" marginBottom="3" text="{{ lastName + ' ' + firstName  }}" />
-                                <Label class="heading light text-center" text="les mesures les plus recents" />
+                                <Image width="100" marginBottom="10" class="img-rounded"
+                                       src="http://i.pravatar.cc/300"/>
+                                <Label class="heading light text-center" marginBottom="3"
+                                       text="{{ lastName + ' ' + firstName  }}"/>
+                                <Label class="heading light text-center" text="les mesures les plus recents"/>
                             </FlexboxLayout>
                         </FlexboxLayout>
                         <ScrollView orientation="horizontal"
@@ -35,12 +35,12 @@
                                     <FlexboxLayout flexDirection="column"
                                                    style="padding: 15 10">
                                         <Image width="55" marginBottom="10"
-                                               src="http://192.168.1.103:8080/heartbeat.png" />
-                                        <Label text="{{ lastMesure[0].value }}" class="val" />
-                                        <Label text="bpm" class="sub" />
+                                               src="http://192.168.43.240:8080/heartbeat.png"/>
+                                        <Label text="{{ lastMesure[0].value }}" class="val"/>
+                                        <Label text="bpm" class="sub"/>
                                     </FlexboxLayout>
                                     <Label text="{{ lastMesure[0].name }}" class="label"
-                                           style=" font-size:13;" />
+                                           style=" font-size:13;"/>
                                 </StackLayout>
                                 <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[1].name }}"
                                              orientation="vertical" class="card calories overview"
@@ -48,12 +48,12 @@
                                     <FlexboxLayout flexDirection="column"
                                                    style="padding: 15 10">
                                         <Image width="55" marginBottom="10"
-                                               src="http://192.168.1.103:8080/bloodPre.png" />
-                                        <Label text="{{ lastMesure[1].value }}" class="val" />
-                                        <Label text="mm Hg" class="sub" />
+                                               src="http://192.168.43.240:8080/bloodPre.png"/>
+                                        <Label text="{{ lastMesure[1].value }}" class="val"/>
+                                        <Label text="mm Hg" class="sub"/>
                                     </FlexboxLayout>
                                     <Label text="{{ lastMesure[1].name }}" class="label"
-                                           style=" font-size:13;" />
+                                           style=" font-size:13;"/>
                                 </StackLayout>
                                 <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[2].name }}"
                                              orientation="vertical" class="card walk overview"
@@ -61,11 +61,11 @@
                                     <FlexboxLayout flexDirection="column"
                                                    style="padding: 15 10">
                                         <Image width="55" height="55" marginBottom="10"
-                                               src="~/images/spo2.JPG" />
-                                        <Label text="{{ lastMesure[2].value }}" class="val" />
-                                        <Label text="%" class="sub" />
+                                               src="~/images/spo2.JPG"/>
+                                        <Label text="{{ lastMesure[2].value }}" class="val"/>
+                                        <Label text="%" class="sub"/>
                                     </FlexboxLayout>
-                                    <Label text="{{ lastMesure[2].name }}" class="label" style=" font-size:13;" />
+                                    <Label text="{{ lastMesure[2].name }}" class="label" style=" font-size:13;"/>
                                 </StackLayout>
                                 <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[3].name }}"
                                              width="100"
@@ -74,11 +74,11 @@
                                     <FlexboxLayout flexDirection="column"
                                                    style="padding: 15 10">
                                         <Image width="55" height="55" marginBottom="10"
-                                               src="~/images/temperature.jpg" />
-                                        <Label text="{{ lastMesure[3].value }}" class="val" />
-                                        <Label text="C°" class="sub" />
+                                               src="~/images/temperature.jpg"/>
+                                        <Label text="{{ lastMesure[3].value }}" class="val"/>
+                                        <Label text="C°" class="sub"/>
                                     </FlexboxLayout>
-                                    <Label text="{{ lastMesure[3].name }}" class="label" style=" font-size:13;" />
+                                    <Label text="{{ lastMesure[3].name }}" class="label" style=" font-size:13;"/>
                                 </StackLayout>
                                 <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[4].name }}"
                                              orientation="vertical" class="card walk overview"
@@ -86,11 +86,11 @@
                                     <FlexboxLayout flexDirection="column"
                                                    style="padding: 15 10">
                                         <Image width="55" marginBottom="10"
-                                               src="http://192.168.1.103:8080/glycemie.png" />
-                                        <Label text="{{ lastMesure[4].value }}" class="val" />
-                                        <Label text="g/l" class="sub" />
+                                               src="http://192.168.43.240:8080/glycemie.png"/>
+                                        <Label text="{{ lastMesure[4].value }}" class="val"/>
+                                        <Label text="g/l" class="sub"/>
                                     </FlexboxLayout>
-                                    <Label text="{{ lastMesure[4].name }}" class="label" style=" font-size:13;" />
+                                    <Label text="{{ lastMesure[4].name }}" class="label" style=" font-size:13;"/>
                                 </StackLayout>
                             </WrapLayout>
                         </ScrollView>
@@ -105,51 +105,39 @@
                                    style=" background:#fafbfc; border-radius: 3 3 0 0;">
                         <FlexboxLayout flexDirection="row-reverse" alignItems="center"
                                        class="objective" alignSelf="flex-start" style="padding-top:20">
-                            <Label class="heading dark" text="Recommendations" />
+                            <Label class="heading dark" text="Recommendations"/>
                         </FlexboxLayout>
-                        <Image width="50" alignSelf="flex-start" src="~/App_Resources/badge.png" />
+                        <Image width="40" marginTop="5" marginRight="10"  alignSelf="flex-start" src="~/images/add.png" ontap="{{ showPrompt }}"/>
                     </FlexboxLayout>
-                    <StackLayout orientation="vertical" style="padding:15 0 ; margin:0 15;">
-                        <FlexboxLayout class="list" flexDirection="row"
-                                       alignItems="center">
-                            <FlexboxLayout flexGrow="1" flexDirection="column">
-                                <Label class="user" text="Recommendations #1" />
-                                <Label class="heading light" style=" font-size:16; color:#ff2e63;font-weight:500; margin-bottom:0; margin-top:0">
-                                    <FormattedString>
-                                        <Span text="{{ RocDate }}" style="font-weight:500" />
-                                    </FormattedString>
-                                </Label>
-                            </FlexboxLayout>
-                            <Label text="01" style=" font-size:20;font-weight:600; color:#ebf1f2; text-align:center; width:40" />
-                        </FlexboxLayout>
-                        <Image width="100%" src="" style="background:#ebf1f2;height:1; margin:15 0;" />
-                        <FlexboxLayout class="list" flexDirection="row"
-                                       alignItems="center">
-                            <FlexboxLayout flexGrow="1" flexDirection="column">
-                                <Label class="user" text="Recommendations #2" />
-                                <Label class="heading light" style=" font-size:16; color:#ff2e63;font-weight:500; margin-bottom:0; margin-top:0">
-                                    <FormattedString>
-                                        <Span text="{{ RocDate }}" style="font-weight:500"  />
-                                    </FormattedString>
-                                </Label>
-                            </FlexboxLayout>
-                            <Label text="02" style=" font-size:20;font-weight:600; color:#ebf1f2; text-align:center; width:40" />
-                        </FlexboxLayout>
-                        <Image width="100%" src="" style="background:#ebf1f2;height:1; margin:15 0;" />
-                        <FlexboxLayout class="list" flexDirection="row"
-                                       alignItems="center">
-                            <FlexboxLayout flexGrow="1" flexDirection="column">
-                                <Label class="user" text="Recommendations #3" />
-                                <Label class="heading light" style=" font-size:16; color:#ff2e63;font-weight:500; margin-bottom:0; margin-top:0">
-                                    <FormattedString>
-                                        <Span text="{{ RocDate }}" style="font-weight:500" />
-                                    </FormattedString>
-                                </Label>
-                            </FlexboxLayout>
-                            <Label text="03" style=" font-size:20;font-weight:600; color:#ebf1f2; text-align:center; width:40" />
-                        </FlexboxLayout>
+
+                    <StackLayout orientation="vertical" style="padding:15 1 ; margin:0 15;">
+                        <scroll-view height="300">
+                            <ListView items="{{ recommendations }}"
+                                      itemTap="{{ showRecoDialog }}" >
+                                <ListView.itemTemplate>
+                                    <!-- The item template can only have a single root view container (e.g. GriLayout, StackLayout, etc.) -->
+                                    <StackLayout >
+                                        <FlexboxLayout class="list" flexDirection="row"
+                                                       alignItems="center" height="100">
+                                            <FlexboxLayout flexGrow="1" flexDirection="column">
+                                                <Label class="user" text="{{ content }}"/>
+                                                <Label class="heading light"
+                                                       style=" font-size:16; color:#ff2e63;font-weight:500; margin-bottom:0; margin-top:0">
+                                                    <FormattedString>
+                                                        <Span text="{{ date }}" style="font-weight:500"/>
+                                                    </FormattedString>
+                                                </Label>
+                                            </FlexboxLayout>
+                                            <Label text="01"
+                                                   style=" font-size:20;font-weight:600; color:#ebf1f2; text-align:center; width:40"/>
+                                        </FlexboxLayout>
+                                    </StackLayout>
+                                </ListView.itemTemplate>
+                            </ListView>
+                        </scroll-view>
                     </StackLayout>
                 </StackLayout>
+
             </GridLayout>
         </ScrollView>
 
@@ -165,10 +153,9 @@
                                tap="{{closeDialog}}" justifyContent="space-between"
                                alignItems="center" style="background:#fafbfc; margin-bottom:15; border-radius:0 12 0 0">
                     <FlexboxLayout flexDirection="row-reverse" alignItems="center">
-                        <Label class="subheading" text="Week #23" style="padding:0; margin-top:2" />
-                        <Label class="heading dark" text="Heartbeat" style="margin:0" />
+                        <Label class="heading dark" text="Heartbeat" style="margin:0"/>
                     </FlexboxLayout>
-                    <Image src="~/App_Resources/close.png" style="width:22; height:22; margin-right:15" />
+                    <Image src="~/App_Resources/close.png" style="width:22; height:22; margin-right:15"/>
                 </FlexboxLayout>
 
 
@@ -178,20 +165,21 @@
                     <chart:RadCartesianChart row="1" selectionMode="Single">
                         <chart:RadCartesianChart.horizontalAxis>
                             <chart:DateTimeContinuousAxis lineColor="#ebf1f2"
-                                                   lineThickness="2" labelTextColor="#021042"
-                                                   labelMargin="10" android:labelMargin="20"
-                                                          majorStep="Month" dateFormat="MMM-dd" labelFitMode="Rotate" labelRotationAngle="1.2" />
+                                                          lineThickness="2" labelTextColor="#021042"
+                                                          labelMargin="10" android:labelMargin="20"
+                                                          majorStep="Month" dateFormat="MMM-dd" labelFitMode="Rotate"
+                                                          labelRotationAngle="1.2"/>
                         </chart:RadCartesianChart.horizontalAxis>
                         <chart:RadCartesianChart.verticalAxis>
                             <chart:LinearAxis lineColor="#ebf1f2" labelFormat="%.0f"
                                               lineThickness="2" labelTextColor="#021042"
-                                              labelMargin="10" android:labelMargin="20" />
+                                              labelMargin="10" android:labelMargin="20"/>
                         </chart:RadCartesianChart.verticalAxis>
                         <chart:RadCartesianChart.series>
                             <chart:AreaSeries seriesName="Area"
                                               categoryProperty="day" items="{{ calories_data }}"
                                               stackMode="Stack" valueProperty="count"
-                                              selectionMode="Series" />
+                                              selectionMode="Series"/>
                         </chart:RadCartesianChart.series>
                         <chart:RadCartesianChart.grid>
                             <chart:RadCartesianChartGrid
@@ -199,7 +187,7 @@
                                     verticalLinesVisible="false"
                                     verticalStripLinesVisible="false"
                                     horizontalStripLinesVisible="false"
-                                    horizontalStrokeColor="#e5e5e5" />
+                                    horizontalStrokeColor="#e5e5e5"/>
                         </chart:RadCartesianChart.grid>
                         <chart:RadCartesianChart.palettes>
                             <chart:Palette seriesName="Area">
@@ -207,11 +195,11 @@
                                     <chart:PaletteEntry android:fillColor="rgba(235,241,242,0.6)"
                                                         ios:fillColor="rgba(235,241,242,0.6)"
                                                         strokeColor="#ff2e63" strokeWidth="3"
-                                                        android:strokeWidth="6" />
+                                                        android:strokeWidth="6"/>
                                     <chart:PaletteEntry android:fillColor="rgba(235,241,242,0.6)"
                                                         ios:fillColor="rgba(235,241,242,0.6)"
                                                         strokeColor="#ff2e63" strokeWidth="3"
-                                                        android:strokeWidth="6" />
+                                                        android:strokeWidth="6"/>
                                 </chart:Palette.entries>
                             </chart:Palette>
                             <chart:Palette seriesName="Area" seriesState="Selected">
@@ -219,11 +207,11 @@
                                     <chart:PaletteEntry android:fillColor="rgba(235,241,242,1)"
                                                         ios:fillColor="rgba(235,241,242,1)"
                                                         strokeColor="#ff2e63" strokeWidth="3"
-                                                        android:strokeWidth="6" />
+                                                        android:strokeWidth="6"/>
                                     <chart:PaletteEntry android:fillColor="rgba(235,241,242,1)"
                                                         ios:fillColor="rgba(235,241,242,1)"
                                                         strokeColor="#ff2e63" strokeWidth="3"
-                                                        android:strokeWidth="6" />
+                                                        android:strokeWidth="6"/>
                                 </chart:Palette.entries>
                             </chart:Palette>
                         </chart:RadCartesianChart.palettes>
