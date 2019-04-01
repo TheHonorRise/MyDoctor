@@ -1,5 +1,6 @@
 const observableModule = require("tns-core-modules/data/observable");
 const appSettings = require("tns-core-modules/application-settings");
+const dialogs = require("tns-core-modules/ui/dialogs");
 function BrowseViewModel() {
     const id = appSettings.getString("_id");
     const viewModel = observableModule.fromObject({
@@ -35,6 +36,10 @@ function BrowseViewModel() {
                 .then((r) => {
                     console.log(r.headers.status);
                     this.status = r.status;
+                    dialogs.alert({
+                        title: 'Patient added successfully',
+                        okButtonText: "OK"
+                    });
                     myFrame.navigate("home/home-items-page");
                     return r.json();
                 })
