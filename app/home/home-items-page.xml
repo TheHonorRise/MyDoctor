@@ -5,7 +5,7 @@
     xmlns:lv="nativescript-ui-listview">
 
     <ActionBar class="action-bar">
-        <Label class="action-bar-title" style="color:white;" text="My Patients"></Label>
+        <Label class="action-bar-title" style="color:white;" text="Mes patients"></Label>
     </ActionBar>
 
     <GridLayout rows="*">
@@ -19,7 +19,7 @@
                     <StackLayout backgroundColor="white" padding="10">
                         <Label text="{{ firstName + '  '+ lastName }}" class="item-name" textWrap="true" />
                         <Label text="{{ deptName }}" class="item-desc" textWrap="true" />
-                        <Label text="{{ height +' m '+ weight +' kg ' }}" class="item-price" />
+                        <Label text="{{ height +' cm '+ weight +' kg ' }}" class="item-price" />
                     </StackLayout>
                 </StackLayout>
             </lv:RadListView.itemTemplate>

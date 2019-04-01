@@ -29,7 +29,7 @@
                         <ScrollView orientation="horizontal"
                                     scrollBarIndicatorVisible="false">
                             <WrapLayout orientation="horizontal">
-                                <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[0].name }}"
+                                <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[0].name }}" idd="bpm"
                                              orientation="vertical" class="card heartbeat overview"
                                              width="100" style="text-align:center; margin-left:15">
                                     <FlexboxLayout flexDirection="column"
@@ -42,7 +42,7 @@
                                     <Label text="{{ lastMesure[0].name }}" class="label"
                                            style=" font-size:13;"/>
                                 </StackLayout>
-                                <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[1].name }}"
+                                <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[1].name }}" idd="mm hg"
                                              orientation="vertical" class="card calories overview"
                                              width="100" style="text-align:center">
                                     <FlexboxLayout flexDirection="column"
@@ -55,7 +55,7 @@
                                     <Label text="{{ lastMesure[1].name }}" class="label"
                                            style=" font-size:13;"/>
                                 </StackLayout>
-                                <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[2].name }}"
+                                <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[2].name }}" idd="%"
                                              orientation="vertical" class="card walk overview"
                                              width="100" style="text-align:center">
                                     <FlexboxLayout flexDirection="column"
@@ -67,7 +67,7 @@
                                     </FlexboxLayout>
                                     <Label text="{{ lastMesure[2].name }}" class="label" style=" font-size:13;"/>
                                 </StackLayout>
-                                <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[3].name }}"
+                                <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[3].name }}" idd="C°"
                                              width="100"
                                              orientation="vertical" class=" water overview card"
                                              style="text-align:center;">
@@ -80,7 +80,7 @@
                                     </FlexboxLayout>
                                     <Label text="{{ lastMesure[3].name }}" class="label" style=" font-size:13;"/>
                                 </StackLayout>
-                                <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[4].name }}"
+                                <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[4].name }}" idd="g/l"
                                              orientation="vertical" class="card walk overview"
                                              width="100" style="text-align:center">
                                     <FlexboxLayout flexDirection="column"
@@ -151,16 +151,17 @@
                                tap="{{closeDialog}}" justifyContent="space-between"
                                alignItems="center" style="background:#fafbfc; margin-bottom:15; border-radius:0 12 0 0">
                     <FlexboxLayout flexDirection="row-reverse" alignItems="center">
-                        <Label class="subheading" text="Week #23" style="padding:0; margin-top:2"/>
-                        <Label class="heading dark" text="Heartbeat" style="margin:0"/>
+                        <Label class="heading dark" text="ajouter mesure" style="margin:0"/>
                     </FlexboxLayout>
                     <Image src="~/App_Resources/close.png" style="width:22; height:22; margin-right:15"/>
                 </FlexboxLayout>
 
 
-                <GridLayout rows="auto, *" xmlns:chart="nativescript-ui-chart"
+                <GridLayout rows="auto, *"
                             class="modal_chart">
-
+                    <label text="valeur" />
+                    <text-field text="{{ value }}" hint="valeur"/>
+                    <button text="ajouter" tap="{{ closeDialog }}" marginTop="100"/>
 
                     <!--<chart:RadCartesianChart row="1" selectionMode="Single">-->
                     <!--<chart:RadCartesianChart.horizontalAxis>-->

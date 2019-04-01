@@ -19,11 +19,11 @@
                         <FlexboxLayout alignItems="center" width="100%"
                                        flexDirection="row" style="padding-right:15;">
                             <FlexboxLayout flexDirection="column" width="100%">
-                                <Image width="100" marginBottom="10" class="img-rounded"
+                                <Image width="120" marginBottom="10" borderRadius="50"
                                        src="http://i.pravatar.cc/300"/>
                                 <Label class="heading light text-center" marginBottom="3"
                                        text="{{ lastName + ' ' + firstName  }}"/>
-                                <Label class="heading light text-center" text="les mesures les plus recents"/>
+                                <Label class="heading light text-center" text="les mesures les plus recentes"/>
                             </FlexboxLayout>
                         </FlexboxLayout>
                         <ScrollView orientation="horizontal"
@@ -153,7 +153,7 @@
                                tap="{{closeDialog}}" justifyContent="space-between"
                                alignItems="center" style="background:#fafbfc; margin-bottom:15; border-radius:0 12 0 0">
                     <FlexboxLayout flexDirection="row-reverse" alignItems="center">
-                        <Label class="heading dark" text="Heartbeat" style="margin:0"/>
+                        <Label class="heading dark" text="{{ header }}" style="margin:0"/>
                     </FlexboxLayout>
                     <Image src="~/App_Resources/close.png" style="width:22; height:22; margin-right:15"/>
                 </FlexboxLayout>

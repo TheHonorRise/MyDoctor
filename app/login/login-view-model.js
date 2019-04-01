@@ -6,7 +6,7 @@ function LoginViewModel() {
     const viewModel = observableModule.fromObject({
         email: "hamada@gmail.com",
         password: "Half.Blood.2491",
-        isDoctor: false,
+        isDoctor: true,
         _id : "",
         status : 1,
         error : "",

@@ -13,17 +13,17 @@
 			<StackLayout class="input-field">
 				<TextField id="password" text="{{ password }}" class="input" hint="Password" secure="true" />
 			</StackLayout>
-			<Label text="doctor ?" class="login-label h3 text-center" ></Label>
-			<Switch checked="{{ isDoctor }}" isEnabled="true" id="my-switch" class="" style="color:firebrick; background-color:rgb(243, 138, 138);"/>
+			<Label text="Patient - Medecin" class="login-label h3 text-center"/>
+			<Switch checked="{{ isDoctor }}" isEnabled="true" id="my-switch" marginRight="150" style="color:firebrick; background-color:rgb(243, 138, 138); "/>
 			<Button text="Log In" tap="{{ submit }}" class="btn btn-primary margin" />
-			<Label text="Forgot your password?" class="login-label centered" tap=" forgotPassword "/>
+			<Label text="Mot de passe oublié ?" class="login-label centered" tap=" forgotPassword "/>
 			<Label text="{{ error }}" class="login-label"/>
 		</StackLayout>
 
 		<Label class="login-label sign-up-label " tap="{{ toSignUp }}">
 			<FormattedString>
-				<Span text="Don’t have an account?  " />
-				<Span text="Sign up" class="bold" />
+				<Span text="Pas encore inscrit ? " />
+				<Span text="Signup" class="bold" />
 			</FormattedString>
 		</Label>
 	</FlexboxLayout>

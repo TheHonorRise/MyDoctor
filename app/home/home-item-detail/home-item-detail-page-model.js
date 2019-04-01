@@ -13,7 +13,7 @@ async function HomeItemDetailViewModel(context) {
 
     let reco ;
 
-    const sens = ["heartBeat", "blood presure", "spo2", "temp", "clucometre"];
+    const sens = ["heartBeat", "Blood Pressure", "SPO2", "Temp", "Blood Sugar"];
     await fetch(`http://192.168.43.240:8080/mesure/${sens[0]}/${context._id}`, {
         method: "GET",
         headers: { "content-type": "application/json" }
@@ -76,16 +76,18 @@ async function HomeItemDetailViewModel(context) {
         lastName: context.lastName,
         patientId: context._id,
         image: context.image,
+        idd: "",
         RocDate: "20/mar/2018",
         description: "hamid tagona",
         recommendations: [],
+        header: "",
         dialogOpen: false,
         lastMesure: [
             { name: "heartBeat", value: h },
-            { name: "blood presure", value: b },
-            { name: 'spo2', value: s },
-            { name: 'temp', value: t},
-            { name: 'clucometre', value: c }
+            { name: "Blood Pressure", value: b },
+            { name: 'SPO2', value: s },
+            { name: 'Temp', value: t},
+            { name: 'Blood Sugar', value: c }
         ],
         calories_data: [
             {
@@ -113,6 +115,7 @@ async function HomeItemDetailViewModel(context) {
             this.dialogOpen = true;
 
             const tappedItem = args.object.id;
+            this.header = tappedItem;
             fetch(`http://192.168.43.240:8080/mesure/${tappedItem}/${this.patientId}`, {
                 method: "GET",
                 headers: { "content-type": "application/json" }
@@ -146,7 +149,7 @@ async function HomeItemDetailViewModel(context) {
         },
         showPrompt: function () {
             dialogs.prompt({
-                title: "Ajouter une recomendations",
+                title: "Ajouter une recommendation",
                 okButtonText: "Envoyer",
                 defaultText: "Default text",
                 inputType: dialogs.inputType.text
@@ -167,7 +170,13 @@ async function HomeItemDetailViewModel(context) {
                         })
                             .then((r) => r.json())
                             .then((response) => {
-                                viewModel.recommendations = response;
+                                let data = [];
+                                response.map( r => {
+                                    let n = new Date(r.date);
+                                    r.date = n.toDateString();
+                                    data.push(r);
+                                });
+                                viewModel.recommendations = data;
                             })
                             .catch((e) => {
                                 console.log(e);
@@ -183,7 +192,7 @@ async function HomeItemDetailViewModel(context) {
             const view = args.view;
             const tappedItem = view.bindingContext;
             dialogs.alert({
-                title: "La date" + tappedItem.date,
+                title: "La date: " + tappedItem.date,
                 message: tappedItem.content,
                 okButtonText: "OK"
             });
@@ -195,7 +204,13 @@ async function HomeItemDetailViewModel(context) {
     })
         .then((r) => r.json())
         .then((response) => {
-            viewModel.recommendations = response;
+            let data = [];
+            response.map( r => {
+                let n = new Date(r.date);
+                r.date = n.toDateString();
+                data.push(r);
+            });
+            viewModel.recommendations = data;
         })
         .catch((e) => {
             console.log(e);

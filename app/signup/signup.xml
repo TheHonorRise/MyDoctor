@@ -5,14 +5,14 @@
         <StackLayout class="page">
             <StackLayout class="form">
 
-                <Label class="header centered h2" text="MyDoctor" color="firebrick" />
+                <Label class="header centered h2" text="Inscription" style="color: white" />
                 <StackLayout class="input-field">
                     <TextField text="{{ firstName }}" hint="Nom" />
 
                 </StackLayout>
 
                 <StackLayout class="input-field">
-                    <TextField text="{{ lastName }}" hint="Prenom" />
+                    <TextField text="{{ lastName }}" hint="Prénom" />
                 </StackLayout>
 
                 <StackLayout class="input-field">
@@ -40,19 +40,19 @@
                 <StackLayout class="input-field">
                     <Label class="title" text="Date de naissance" textWrap="true"
                         marginBottom="-8"></Label>
-                    <DatePicker date="{{ birth }}" minDate="1970-01-01" maxDate="2100-12-31" />
+                    <DatePicker date="{{ birth }}" minDate="1970-01-02" maxDate="2100-12-31" />
                 </StackLayout>
 
 
 
-                <Button text="sign up" tap="{{ submit }}" class="btn btn-danger m-t-20" />
+                <Button text="SignUp" tap="{{ submit }}" class="btn btn-danger m-t-20" />
                 <Label text="{{ error }}" class="login-label" />
 
 
                 <Label class="login-label sign-up-label centered" tap="{{ toLogin }}">
                     <FormattedString>
-                        <Span text="You have an account ? " />
-                        <Span text="Log in" class="bold" />
+                        <Span text="Déja inscrit ? " />
+                        <Span text="Login" class="bold" />
                     </FormattedString>
                 </Label>
 

@@ -8,7 +8,7 @@ async function HomePageModel(context) {
     let t = '-';
     let c = '-';
 
-    const sens = ["heartBeat", "blood presure", "spo2", "temp", "clucometre"];
+    const sens = ["heartBeat", "Blood Pressure", "SPO2", "Temp", "Blood Sugar"];
     await fetch(`http://192.168.43.240:8080/mesure/${sens[0]}/${context._id}`, {
         method: "GET",
         headers: { "content-type": "application/json" }
@@ -73,13 +73,16 @@ async function HomePageModel(context) {
         description: "hamid tagona",
         dialogOpen: false,
         recommendations: [],
+        mesureId: "",
+        unit: "",
+        value: "",
         RocDate: "2-mar",
         lastMesure: [
             { name: "heartBeat", value: h },
-            { name: "blood presure", value: b },
-            { name: 'spo2', value: s },
-            { name: 'temp', value: t},
-            { name: 'clucometre', value: c }
+            { name: "Blood Pressure", value: b },
+            { name: 'SPO2', value: s },
+            { name: 'Temp', value: t},
+            { name: 'Blood Sugar', value: c }
         ],
         calories_data: [
             {
@@ -104,33 +107,36 @@ async function HomePageModel(context) {
             }
         ],
         showDialog: function (args) {
-            this.dialogOpen = true;
 
             const tappedItem = args.object.id;
-            fetch(`http://192.168.43.240:8080/mesure/${tappedItem}/${this.patientId}`, {
-                method: "GET",
-                headers: { "content-type": "application/json" }
-            })
-                .then((r) => r.json())
-                .then((response) => {
-                    console.log(response);
-                    const data = [];
-                    response.map((m) => {
-                        const day = new Date(m.date);
-                        data.push({
-                            day: day,
-                            count: m.value
-                        });
-                    });
-                    this.calories_data = data;
-                    console.log(this.calories_data);
+            const tappedItem1 = args.object.idd;
+            this.mesureId = tappedItem;
+            this.unit = tappedItem1;
+            dialogs.prompt({
+                title: "envoyer une mesure",
+                okButtonText: "Envoyer",
+                defaultText: "Default text",
+                inputType: dialogs.inputType.text
+            }).then( r => {
+                fetch("http://192.168.43.240:8080/mesure", {
+                    method: "POST",
+                    headers: { "content-type": "application/json" },
+                    body: JSON.stringify({
+                        patientId: this.patientId,
+                        capteurId: this.mesureId,
+                        value: r.text,
+                        unit: this.unit
+                    })
                 })
-                .catch((e) => {
-                    console.log(e);
-                });
+                    .catch((e) => {
+                        console.log(e);
+                    });
+            });
         },
         closeDialog: function () {
             this.dialogOpen = false;
+
+
         },
         submenu: function () {
             dialogs.alert({
