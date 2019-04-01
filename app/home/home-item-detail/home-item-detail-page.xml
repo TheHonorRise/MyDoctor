@@ -128,7 +128,7 @@
                                                     </FormattedString>
                                                 </Label>
                                             </FlexboxLayout>
-                                            <Label text="01"
+                                            <Label text="{{ num }}"
                                                    style=" font-size:20;font-weight:600; color:#ebf1f2; text-align:center; width:40"/>
                                         </FlexboxLayout>
                                     </StackLayout>

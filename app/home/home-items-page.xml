@@ -14,7 +14,7 @@
                 <lv:ListViewStaggeredLayout scrollDirection="Vertical" spanCount="2" />
             </lv:RadListView.listViewLayout>
             <lv:RadListView.itemTemplate>
-                <StackLayout margin="15" borderRadius="10">
+                <StackLayout margin="15" borderRadius="10" style="border-radius: 10">
                     <Image src="{{ image }}" width="200" height="120" stretch="aspectFill" />
                     <StackLayout backgroundColor="white" padding="10">
                         <Label text="{{ firstName + '  '+ lastName }}" class="item-name" textWrap="true" />
@@ -25,7 +25,6 @@
             </lv:RadListView.itemTemplate>
         </lv:RadListView>
     </GridLayout>
-
 
     <!--<ListView items="{{ items }}" itemTap="onItemTap" class="list-group">-->
         <!--<ListView.itemTemplate>-->

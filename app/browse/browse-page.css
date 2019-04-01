@@ -1,0 +1,26 @@
+.page {
+    align-items: center;
+    flex-direction: column;
+
+}
+.form {
+    margin-left: 30;
+    margin-right: 30;
+    margin-top: 30;
+    margin-bottom: 30;
+    flex-grow: 2;
+    vertical-align: middle;
+}
+.centered{
+    text-align: center;
+}
+.btn-danger{
+    background-color : firebrick;
+    color: white;
+}
+
+.title{
+    color: gray;
+    margin-top: 7;
+    margin-right: 20;
+}

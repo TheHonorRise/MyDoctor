@@ -1,8 +1,10 @@
 const observableModule = require("tns-core-modules/data/observable");
 const dialogs = require("tns-core-modules/ui/dialogs");
 const ObservableArray = require("data/observable-array").ObservableArray;
+const appSettings = require("tns-core-modules/application-settings");
 
 async function HomeItemDetailViewModel(context) {
+    const id = appSettings.getString("_id");
     let h = '-';
     let b = '-';
     let s = '-';
@@ -149,7 +151,32 @@ async function HomeItemDetailViewModel(context) {
                 defaultText: "Default text",
                 inputType: dialogs.inputType.text
             }).then(function (r) {
-                console.log("Dialog result: " + r.result + ", text: " + r.text);
+                fetch("http://192.168.43.240:8080/recommendation", {
+                    method: "POST",
+                    headers: { "content-type": "application/json" },
+                    body: JSON.stringify({
+                        patientId: context._id,
+                        doctorId: id,
+                        content: r.text
+                    })
+                })
+                    .then((r) => {
+                        fetch(`http://192.168.43.240:8080/recommendations/${context._id}`, {
+                            method: "GET",
+                            headers: { "content-type": "application/json" }
+                        })
+                            .then((r) => r.json())
+                            .then((response) => {
+                                viewModel.recommendations = response;
+                            })
+                            .catch((e) => {
+                                console.log(e);
+                            });
+                        return r.json();
+                    })
+                    .catch((e) => {
+                        console.log(e);
+                    });
             });
         },
         showRecoDialog: function (args) {
