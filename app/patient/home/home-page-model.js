@@ -74,6 +74,7 @@ async function HomePageModel(context) {
         dialogOpen: false,
         recommendations: [],
         mesureId: "",
+        header: "",
         unit: "",
         value: "",
         RocDate: "2-mar",
@@ -106,6 +107,33 @@ async function HomePageModel(context) {
                 count: 210
             }
         ],
+        showD: function(args){
+            this.dialogOpen = true;
+
+            const tappedItem = args.object.id;
+            this.header = tappedItem;
+            fetch(`http://192.168.43.240:8080/mesure/${tappedItem}/${this.patientId}`, {
+                method: "GET",
+                headers: { "content-type": "application/json" }
+            })
+                .then((r) => r.json())
+                .then((response) => {
+                    console.log(response);
+                    const data = [];
+                    response.map((m) => {
+                        const day = new Date(m.date);
+                        data.push({
+                            day: day,
+                            count: m.value
+                        });
+                    });
+                    this.calories_data = data;
+                    console.log(this.calories_data);
+                })
+                .catch((e) => {
+                    console.log(e);
+                });
+        },
         showDialog: function (args) {
 
             const tappedItem = args.object.id;

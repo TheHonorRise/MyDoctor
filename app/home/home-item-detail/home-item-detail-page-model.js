@@ -1,6 +1,5 @@
 const observableModule = require("tns-core-modules/data/observable");
 const dialogs = require("tns-core-modules/ui/dialogs");
-const ObservableArray = require("data/observable-array").ObservableArray;
 const appSettings = require("tns-core-modules/application-settings");
 
 async function HomeItemDetailViewModel(context) {

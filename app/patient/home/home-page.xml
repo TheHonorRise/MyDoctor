@@ -20,7 +20,7 @@
                                        flexDirection="row" style="padding-right:15;">
                             <FlexboxLayout flexDirection="column" width="100%">
                                 <Image width="100" marginBottom="10" class="img-rounded"
-                                       src="http://i.pravatar.cc/300"/>
+                                       src="http://i.pravatar.cc/400"/>
                                 <Label class="heading light text-center" marginBottom="3"
                                        text="{{ lastName + ' ' + firstName  }}"/>
                                 <Label class="heading light text-center" text="les mesures les plus recents"/>
@@ -29,68 +29,73 @@
                         <ScrollView orientation="horizontal"
                                     scrollBarIndicatorVisible="false">
                             <WrapLayout orientation="horizontal">
-                                <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[0].name }}" idd="bpm"
+                                <StackLayout  id="{{ lastMesure[0].name }}" idd="bpm"
                                              orientation="vertical" class="card heartbeat overview"
                                              width="100" style="text-align:center; margin-left:15">
                                     <FlexboxLayout flexDirection="column"
                                                    style="padding: 15 10">
-                                        <Image width="55" marginBottom="10"
+                                        <Image width="55" marginBottom="10" tap="{{ showD }}" id="{{ lastMesure[0].name }}"
                                                src="http://192.168.43.240:8080/heartbeat.png"/>
                                         <Label text="{{ lastMesure[0].value }}" class="val"/>
                                         <Label text="bpm" class="sub"/>
                                     </FlexboxLayout>
                                     <Label text="{{ lastMesure[0].name }}" class="label"
                                            style=" font-size:13;"/>
+                                    <label text="Add" class="sub" marginTop="5" tap="{{ showDialog }}" id="{{ lastMesure[0].name }}" idd="bpm"/>
                                 </StackLayout>
-                                <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[1].name }}" idd="mm hg"
+                                <StackLayout id="{{ lastMesure[1].name }}" idd="mm hg"
                                              orientation="vertical" class="card calories overview"
                                              width="100" style="text-align:center">
                                     <FlexboxLayout flexDirection="column"
                                                    style="padding: 15 10">
                                         <Image width="55" marginBottom="10"
-                                               src="http://192.168.43.240:8080/bloodPre.png"/>
+                                               src="http://192.168.43.240:8080/bloodPre.png" tap="{{ showD }}" id="{{ lastMesure[1].name }}"/>
                                         <Label text="{{ lastMesure[1].value }}" class="val"/>
                                         <Label text="mm Hg" class="sub"/>
                                     </FlexboxLayout>
                                     <Label text="{{ lastMesure[1].name }}" class="label"
                                            style=" font-size:13;"/>
+                                    <label text="Add" class="sub" marginTop="5" tap="{{ showDialog }}" id="{{ lastMesure[1].name }}" idd="mm hg"/>
                                 </StackLayout>
-                                <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[2].name }}" idd="%"
+                                <StackLayout  id="{{ lastMesure[2].name }}" idd="%"
                                              orientation="vertical" class="card walk overview"
                                              width="100" style="text-align:center">
                                     <FlexboxLayout flexDirection="column"
                                                    style="padding: 15 10">
                                         <Image width="55" height="55" marginBottom="10"
-                                               src="~/images/spo2.JPG"/>
+                                               src="~/images/spo2.JPG" tap="{{ showD }}" id="{{ lastMesure[2].name }}"/>
                                         <Label text="{{ lastMesure[2].value }}" class="val"/>
                                         <Label text="%" class="sub"/>
                                     </FlexboxLayout>
                                     <Label text="{{ lastMesure[2].name }}" class="label" style=" font-size:13;"/>
+                                    <label text="Add" class="sub" marginTop="5" tap="{{ showDialog }}" id="{{ lastMesure[2].name }}" idd="%"/>
                                 </StackLayout>
-                                <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[3].name }}" idd="C°"
+                                <StackLayout  id="{{ lastMesure[3].name }}" idd="C°"
                                              width="100"
                                              orientation="vertical" class=" water overview card"
                                              style="text-align:center;">
                                     <FlexboxLayout flexDirection="column"
                                                    style="padding: 15 10">
                                         <Image width="55" height="55" marginBottom="10"
-                                               src="~/images/temperature.jpg"/>
+                                               src="~/images/temperature.jpg" tap="{{ showD }}" id="{{ lastMesure[3].name }}"/>
                                         <Label text="{{ lastMesure[3].value }}" class="val"/>
                                         <Label text="C°" class="sub"/>
                                     </FlexboxLayout>
                                     <Label text="{{ lastMesure[3].name }}" class="label" style=" font-size:13;"/>
+                                    <label text="Add" class="sub" marginTop="5" tap="{{ showDialog }}" id="{{ lastMesure[3].name }}" idd="C°"/>
                                 </StackLayout>
-                                <StackLayout tap="{{ showDialog }}" id="{{ lastMesure[4].name }}" idd="g/l"
+                                <StackLayout  id="{{ lastMesure[4].name }}" idd="g/l"
                                              orientation="vertical" class="card walk overview"
                                              width="100" style="text-align:center">
                                     <FlexboxLayout flexDirection="column"
                                                    style="padding: 15 10">
                                         <Image width="55" marginBottom="10"
-                                               src="http://192.168.43.240:8080/glycemie.png"/>
+                                               src="http://192.168.43.240:8080/glycemie.png" tap="{{ showD }}" id="{{ lastMesure[4].name }}"/>
                                         <Label text="{{ lastMesure[4].value }}" class="val"/>
                                         <Label text="g/l" class="sub"/>
                                     </FlexboxLayout>
                                     <Label text="{{ lastMesure[4].name }}" class="label" style=" font-size:13;"/>
+                                    <label text="Add" class="sub" marginTop="5" tap="{{ showDialog }}" id="{{ lastMesure[4].name }}" idd="g/l"/>
                                 </StackLayout>
                             </WrapLayout>
                         </ScrollView>
@@ -151,71 +156,69 @@
                                tap="{{closeDialog}}" justifyContent="space-between"
                                alignItems="center" style="background:#fafbfc; margin-bottom:15; border-radius:0 12 0 0">
                     <FlexboxLayout flexDirection="row-reverse" alignItems="center">
-                        <Label class="heading dark" text="ajouter mesure" style="margin:0"/>
+                        <Label class="heading dark" text="{{ header }}" style="margin:0"/>
                     </FlexboxLayout>
                     <Image src="~/App_Resources/close.png" style="width:22; height:22; margin-right:15"/>
                 </FlexboxLayout>
 
 
-                <GridLayout rows="auto, *"
+                <GridLayout rows="auto, *" xmlns:chart="nativescript-ui-chart"
                             class="modal_chart">
-                    <label text="valeur" />
-                    <text-field text="{{ value }}" hint="valeur"/>
-                    <button text="ajouter" tap="{{ closeDialog }}" marginTop="100"/>
 
-                    <!--<chart:RadCartesianChart row="1" selectionMode="Single">-->
-                    <!--<chart:RadCartesianChart.horizontalAxis>-->
-                    <!--<chart:DateTimeContinuousAxis lineColor="#ebf1f2"-->
-                    <!--lineThickness="2" labelTextColor="#021042"-->
-                    <!--labelMargin="10" android:labelMargin="20"-->
-                    <!--majorStep="Month" dateFormat="MMM-dd" labelFitMode="Rotate" labelRotationAngle="1.2" />-->
-                    <!--</chart:RadCartesianChart.horizontalAxis>-->
-                    <!--<chart:RadCartesianChart.verticalAxis>-->
-                    <!--<chart:LinearAxis lineColor="#ebf1f2" labelFormat="%.0f"-->
-                    <!--lineThickness="2" labelTextColor="#021042"-->
-                    <!--labelMargin="10" android:labelMargin="20" />-->
-                    <!--</chart:RadCartesianChart.verticalAxis>-->
-                    <!--<chart:RadCartesianChart.series>-->
-                    <!--<chart:AreaSeries seriesName="Area"-->
-                    <!--categoryProperty="day" items="{{ calories_data }}"-->
-                    <!--stackMode="Stack" valueProperty="count"-->
-                    <!--selectionMode="Series" />-->
-                    <!--</chart:RadCartesianChart.series>-->
-                    <!--<chart:RadCartesianChart.grid>-->
-                    <!--<chart:RadCartesianChartGrid-->
-                    <!--horizontalLinesVisible="true"-->
-                    <!--verticalLinesVisible="false"-->
-                    <!--verticalStripLinesVisible="false"-->
-                    <!--horizontalStripLinesVisible="false"-->
-                    <!--horizontalStrokeColor="#e5e5e5" />-->
-                    <!--</chart:RadCartesianChart.grid>-->
-                    <!--<chart:RadCartesianChart.palettes>-->
-                    <!--<chart:Palette seriesName="Area">-->
-                    <!--<chart:Palette.entries>-->
-                    <!--<chart:PaletteEntry android:fillColor="rgba(235,241,242,0.6)"-->
-                    <!--ios:fillColor="rgba(235,241,242,0.6)"-->
-                    <!--strokeColor="#ff2e63" strokeWidth="3"-->
-                    <!--android:strokeWidth="6" />-->
-                    <!--<chart:PaletteEntry android:fillColor="rgba(235,241,242,0.6)"-->
-                    <!--ios:fillColor="rgba(235,241,242,0.6)"-->
-                    <!--strokeColor="#ff2e63" strokeWidth="3"-->
-                    <!--android:strokeWidth="6" />-->
-                    <!--</chart:Palette.entries>-->
-                    <!--</chart:Palette>-->
-                    <!--<chart:Palette seriesName="Area" seriesState="Selected">-->
-                    <!--<chart:Palette.entries>-->
-                    <!--<chart:PaletteEntry android:fillColor="rgba(235,241,242,1)"-->
-                    <!--ios:fillColor="rgba(235,241,242,1)"-->
-                    <!--strokeColor="#ff2e63" strokeWidth="3"-->
-                    <!--android:strokeWidth="6" />-->
-                    <!--<chart:PaletteEntry android:fillColor="rgba(235,241,242,1)"-->
-                    <!--ios:fillColor="rgba(235,241,242,1)"-->
-                    <!--strokeColor="#ff2e63" strokeWidth="3"-->
-                    <!--android:strokeWidth="6" />-->
-                    <!--</chart:Palette.entries>-->
-                    <!--</chart:Palette>-->
-                    <!--</chart:RadCartesianChart.palettes>-->
-                    <!--</chart:RadCartesianChart>-->
+                    <chart:RadCartesianChart row="1" selectionMode="Single">
+                        <chart:RadCartesianChart.horizontalAxis>
+                            <chart:DateTimeContinuousAxis lineColor="#ebf1f2"
+                                                          lineThickness="2" labelTextColor="#021042"
+                                                          labelMargin="10" android:labelMargin="20"
+                                                          majorStep="Month" dateFormat="MMM-dd" labelFitMode="Rotate"
+                                                          labelRotationAngle="1.2"/>
+                        </chart:RadCartesianChart.horizontalAxis>
+                        <chart:RadCartesianChart.verticalAxis>
+                            <chart:LinearAxis lineColor="#ebf1f2" labelFormat="%.0f"
+                                              lineThickness="2" labelTextColor="#021042"
+                                              labelMargin="10" android:labelMargin="20"/>
+                        </chart:RadCartesianChart.verticalAxis>
+                        <chart:RadCartesianChart.series>
+                            <chart:AreaSeries seriesName="Area"
+                                              categoryProperty="day" items="{{ calories_data }}"
+                                              stackMode="Stack" valueProperty="count"
+                                              selectionMode="Series"/>
+                        </chart:RadCartesianChart.series>
+                        <chart:RadCartesianChart.grid>
+                            <chart:RadCartesianChartGrid
+                                    horizontalLinesVisible="true"
+                                    verticalLinesVisible="false"
+                                    verticalStripLinesVisible="false"
+                                    horizontalStripLinesVisible="false"
+                                    horizontalStrokeColor="#e5e5e5"/>
+                        </chart:RadCartesianChart.grid>
+                        <chart:RadCartesianChart.palettes>
+                            <chart:Palette seriesName="Area">
+                                <chart:Palette.entries>
+                                    <chart:PaletteEntry android:fillColor="rgba(235,241,242,0.6)"
+                                                        ios:fillColor="rgba(235,241,242,0.6)"
+                                                        strokeColor="#ff2e63" strokeWidth="3"
+                                                        android:strokeWidth="6"/>
+                                    <chart:PaletteEntry android:fillColor="rgba(235,241,242,0.6)"
+                                                        ios:fillColor="rgba(235,241,242,0.6)"
+                                                        strokeColor="#ff2e63" strokeWidth="3"
+                                                        android:strokeWidth="6"/>
+                                </chart:Palette.entries>
+                            </chart:Palette>
+                            <chart:Palette seriesName="Area" seriesState="Selected">
+                                <chart:Palette.entries>
+                                    <chart:PaletteEntry android:fillColor="rgba(235,241,242,1)"
+                                                        ios:fillColor="rgba(235,241,242,1)"
+                                                        strokeColor="#ff2e63" strokeWidth="3"
+                                                        android:strokeWidth="6"/>
+                                    <chart:PaletteEntry android:fillColor="rgba(235,241,242,1)"
+                                                        ios:fillColor="rgba(235,241,242,1)"
+                                                        strokeColor="#ff2e63" strokeWidth="3"
+                                                        android:strokeWidth="6"/>
+                                </chart:Palette.entries>
+                            </chart:Palette>
+                        </chart:RadCartesianChart.palettes>
+                    </chart:RadCartesianChart>
                 </GridLayout>
                 <Button class="btn btn-outline" text="Cancel" tap="{{closeDialog}}"></Button>
             </StackLayout>

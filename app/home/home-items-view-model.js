@@ -10,4 +10,6 @@ function HomeItemsViewModel() {
     return viewModel;
 }
 
+
+
 module.exports = HomeItemsViewModel;
