@@ -83,4 +83,8 @@ function LoginViewModel() {
     return viewModel;
 }
 
+const addPatient = (r)=>{
+    console.log("JOUTER");
+}
+
 module.exports = LoginViewModel;
